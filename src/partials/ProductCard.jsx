@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Price from '../components/Price'
 
-export default function Products() {
+export default function ProductCard() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)

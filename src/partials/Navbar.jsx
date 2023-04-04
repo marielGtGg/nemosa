@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 export default function Navbar() {
 
@@ -6,10 +8,13 @@ export default function Navbar() {
         <nav className="nav">
             <ul>
                 <li>
-                    <a href="/">Accueil</a>
+                    <Link to="/">Menu</Link>
                 </li>
                 <li>
-                    <a href="/panier">Panier</a>
+                    <Link to="/produits">Produits</Link>
+                </li>
+                <li>
+                    <Link to="/panier">Panier</Link>
                 </li>
             </ul>
         </nav>
