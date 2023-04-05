@@ -1,3 +1,7 @@
 export default function Cart() {
-    return <h1>Panier</h1>
+  return (
+    <section>
+      <h1>Panier</h1>
+    </section>
+  )
 }
