@@ -160,3 +160,58 @@ section {
         grid-template-columns: repeat(3, 1fr); 
     }
 } 
+
+#product-index .card-body {
+    padding: .5rem;
+    text-align: start;
+}
+
+#product-index .card-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+#product-index .card-actions {
+    text-align: center;
+    padding: .5rem;
+}
+
+#product-index .qty-group {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+
+#product-index .qty-handler {
+    display: flex;
+    align-items: center;
+}
+
+#product-index .qty {
+    width: 2rem;
+}
+
+button {
+  border: 1px solid rgb(var(--violetRGB));
+  background-color: transparent;
+  color: rgb(var(--violetRGB));
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover,
+button:focus {
+  background-color: rgb(var(--violetRGB));
+  color: rgb(var(--whiteRGB));
+}
