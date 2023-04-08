@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import ProductCard from '../partials/ProductCard'
+import ProductCard from '../components/ProductCard'
 
 export default function ProductIndex() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   useEffect(() => {
-    fetch('http://localhost/nemosa-api/')
+    fetch('http://localhost/nemosa-api/index.php')
     .then((response) => {
       if (response.ok) {
         return response.json()

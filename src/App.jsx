@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react'
+import { createContext } from 'react'
 import { Route, Routes } from "react-router-dom"
+import { CartProvider } from './contexts/CartContext'
+import './css/styles.css'
 import Navbar from './partials/Navbar'
 import Home from './pages/Home'
 import ProductIndex from './pages/ProductIndex'
@@ -7,28 +9,15 @@ import ProductSingle from './pages/ProductSingle'
 import Cart from './pages/Cart'
 import NotFound from './pages/NotFound'
 import Contact from './partials/Contact'
-import Fetch from './services/Fetch'
-import './css/styles.css'
 
-function App() {
-  // let page
+export const CartContext = createContext({})
 
-  // switch (window.location.pathname) {
-  //   case '/':
-  //     page = <Home />
-  //     break
-  //   case '/produits':
-  //     page = <ProductIndex />
-  //     break
-  //   case '/panier':
-  //     page = <Cart />
-  //     break
-  // }
+export default function App() {
 
 
 
   return (
-    <>
+    <CartProvider>
       <header>
         <Navbar />
       </header>
@@ -46,8 +35,6 @@ function App() {
       <footer>
         <Contact />
       </footer>
-    </>
+    </CartProvider>
   )
 }
-
-export default App
