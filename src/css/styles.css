@@ -14,8 +14,10 @@
 
     --sage: rgb(var(--sageRGB));
     --orange: rgb(var(--orangeRGB));
-    --white: rgb(var(--whiteRGB));
-    --black: rgb(var(--blackRGB));
+    --offWhite: #FAFBF9;
+    --veryLightSage: #F0F4EE;
+    --lightSage: #E5ECE3;
+    --offBlack: #253120;
     --blue: rgb(var(--blueRGB));
     --violet: rgb(var(--violetRGB));
     --magenta: rgb(var(--magentaRGB));
@@ -27,12 +29,13 @@
 
 html {
     font-family: 'Montserrat','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: var(--violet);
+    color: var(--offBlack);
 }
 
 body {
     margin: 0;
     min-height: 100vh;
+    background-color: var(--lightSage);
 }
 
 ul {
@@ -87,7 +90,7 @@ img {
 }
   
 .main-container {
-    padding: 5vmin;
+    padding: 5vmin 0;
     text-align: center;
 }
 
@@ -104,23 +107,28 @@ section {
     padding: 5vmin;
 }
 
+.cart-quantity {
+    padding: 0 .5rem;
+}
+
+.nav li:last-child {
+    display: flex;
+}
+
 #about {
-    background-color: var(--blue);
-    color: var(--white);
+    background-color: var(--offWhite);
 }
 
 #product-teaser {
-    background-color: var(--orange);
-    color: var(--white);
+    background-color: var(--lightSage);
 }
 
 #portfolio {
-    background-color: var(--magenta);
-    color: var(--white);
+    background-color: var(--offWhite);
 }
 
 #contact {
-    background-color: var(--sage);
+    background-color: var(--LightSage);
 }
 
 .spacer {

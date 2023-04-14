@@ -33,7 +33,7 @@ export default function ProductSingle() {
   return (
     <section id="product-single">
       <h1>{product.name}</h1>
-      <img src={'/img/products/' + product.img} alt={product.name} />
+      <img src={product.img} alt={product.name} />
       <p>{product.description}</p>
     </section>
   )   
