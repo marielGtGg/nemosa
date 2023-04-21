@@ -81,11 +81,10 @@ button, input[type="submit"], input[type="reset"] {
 /* PARALLAX */
 .wrapper {
     position: relative;
-    height: calc(100vh - 3rem);
-    top: 3rem;
+    height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-    perspective: 10px;
+    perspective: 100px;
 }
 
 .banner {
@@ -95,7 +94,6 @@ button, input[type="submit"], input[type="reset"] {
     height: 100%;
     transform-style: preserve-3d;
     z-index: -1;
-
 }
 
 #growth-rings,
@@ -104,40 +102,45 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 #growth-rings {
+    background-color: var(--ashGray);
     position: absolute;
     height: 150%;
     width: 100%;
     object-fit: cover;
-    transform: translateZ(-10px) scale(2);
+    transform: translateZ(-100px) scale(2);
 }
 
-#nemosa {
+#nemosa, #o-inline {
     position: absolute;
     align-self: center;
     width: 80vw;
-    transform: translateZ(-5px) scale(1.5);
+}
+
+#nemosa {
+    transform: translateZ(-25px) scale(1.25);
+}
+
+#o-inline {
+    transform: translateZ(-50px) scale(1.5);
 }
 
 /* --- NAV --- */
 
-header {
-    position: fixed;
-    top: 0;
-    height: 3rem;
-    background-color: var(--ashGray);
-}
-
 nav  {
-    height: 100%;
+    position: fixed;
+    background-color: var(--ashGray);
+    z-index: 2;
     width: 100vw;
-    padding: .5rem 5vw;
     display: flex;
     flex-direction: column;
     z-index: 1000;
+    transition: all .5s;
 }
 
 
 nav .navbar {
+    height: 3rem;
+    padding: .5rem 5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -146,6 +149,7 @@ nav .navbar {
 
 nav .navbar .cart {
     position: relative;
+    margin-top: .5rem;
 }
 
 nav .navbar .cart span {
@@ -217,7 +221,8 @@ footer {
 }
 
 section {
-    min-height: calc(100vh - 3rem);
+    min-height: 100vh;
+    padding-top: 4rem;
 }
 
 .cart-quantity {

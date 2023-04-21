@@ -1,22 +1,28 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useCart } from '../contexts/CartContext'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 
 
-export default function Navbar() {
+export default function Navbar({mainTop}) {
   const [active, setActive] = useState(false)
   
   const handleClick = () => {
     setActive(!active)
   }
-
+  
   const {
     cartQuantity
   } = useCart()
 
+  const [show, setShow] = useState(false)
+  
+  useEffect(() => {
+    setShow(mainTop <= 60)
+  }, [mainTop])
+  
   return (
-    <nav style={{height: (active ? '100vh' : 'auto')}}>
+    <nav style={{height: (active ? '100vh' : 'auto'), top: (show ? 0 : '-3rem')}}>
       <div className="navbar">
         <button className="hamburger" onClick={handleClick}>
           <span></span>
