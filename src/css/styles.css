@@ -58,11 +58,15 @@ a {
 }
 
 h1 {
-    margin: 0 0 2rem;
+    margin: 0 0 .5rem;
     padding-top: 1rem;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 400;
     color: var(--paynesGray);
+}
+
+p {
+   margin-bottom: .5rem; 
 }
 
 img {
@@ -212,7 +216,6 @@ nav li:hover {
 } */
   
 .main-container {
-    text-align: center;
     position: relative;
 }
 
@@ -221,8 +224,8 @@ footer {
 }
 
 section {
-    min-height: 100vh;
-    padding-top: 4rem;
+    min-height: 50vh;
+    padding: 4rem 5vw 2rem;
 }
 
 .cart-quantity {
@@ -235,6 +238,12 @@ section {
 
 #about {
     background-color: var(--honeyDew);
+}
+
+#about img {
+    margin-left: 20vw;
+    height: 100vw;
+    object-fit: cover;
 }
 
 #product-teaser {
