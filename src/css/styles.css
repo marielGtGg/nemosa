@@ -59,7 +59,6 @@ a {
 
 h1 {
     margin: 0 0 .5rem;
-    padding-top: 1rem;
     font-size: 2.5rem;
     font-weight: 400;
     color: var(--paynesGray);
@@ -225,7 +224,7 @@ footer {
 
 section {
     min-height: 50vh;
-    padding: 4rem 5vw 2rem;
+    padding: 3rem 5vw 2rem;
 }
 
 .cart-quantity {
@@ -241,9 +240,44 @@ section {
 }
 
 #about img {
-    margin-left: 20vw;
-    height: 100vw;
+    margin-left: 15vw;
+    margin-bottom: 1rem;
+    height: 100vmin;
     object-fit: cover;
+}
+
+#about .body {
+    display: flex;
+    flex-direction: column;
+}
+
+#about .more {
+    overflow: hidden;
+    max-height: 500px;
+    transition: all .5s ease-out;
+}
+
+#about .more.hidden {
+    max-height: 0;
+    opacity: 0;
+}
+
+#about .action {
+    margin-left: auto;
+}
+
+#about .btn-more {
+    display: flex;
+    justify-content: end;
+    font-size: 3rem;
+}
+
+#about .btn-more:hover {
+    color: var(--brownSugar);
+}
+
+#about .btn-more span.hidden {
+    visibility: collapse;
 }
 
 #product-teaser {

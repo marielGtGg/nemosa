@@ -18,7 +18,7 @@ export default function Navbar({mainTop}) {
   const [show, setShow] = useState(false)
   
   useEffect(() => {
-    setShow(mainTop <= 60)
+    setShow(mainTop <= 100)
   }, [mainTop])
   
   return (

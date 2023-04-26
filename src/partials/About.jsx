@@ -1,17 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function About() {
+
+  const [shown, setShown] = useState(false)
+
+  const handleClick = () => {
+    setShown(!shown)
+  }
+
   return (
     <section id="about">
       <img src="img/antoine.jpg" alt="Antoine Gauthier-Grégoire" />
       <h1>Je suis ébéniste</h1>
       <div className="body">
         <p className="lead">Maniant la chainsaw et le rabot, je révèle la beauté de nos forêts.</p>
-        <div className="more">
+        <div className={'more ' + (shown ? '' : 'hidden')}>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, dolore at similique delectus voluptates quisquam in facere architecto, qui temporibus soluta quaerat debitis quae, sapiente modi maxime aspernatur tempore repellat.</p>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, dolore at similique delectus voluptates quisquam in facere architecto, qui temporibus soluta quaerat debitis quae, sapiente modi maxime aspernatur tempore repellat.</p>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, dolore at similique delectus voluptates quisquam in facere architecto, qui temporibus soluta quaerat debitis quae, sapiente modi maxime aspernatur tempore repellat.</p>
         </div>
-        {/* <button><FontAwesomeIcon icon="fa-solid fa-plus" /></button> */}
+        <div className="action">
+          <button className="btn-more" onClick={handleClick}>
+            <span className={(shown ? '' : 'hidden')}><i className="fa-solid fa-minus"></i></span>
+            <span className={(shown ? 'hidden' : '')}><i className="fa-solid fa-plus"></i></span>     
+          </button>
+        </div>
       </div>
     </section>
   )
