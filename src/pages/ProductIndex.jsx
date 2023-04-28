@@ -2,11 +2,13 @@ import React, {useEffect, useState} from 'react'
 import ProductCard from '../components/ProductCard'
 
 export default function ProductIndex() {
+
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+
   useEffect(() => {
-    fetch('http://localhost/nemosa-api/index.php')
+    fetch('http://localhost/nemosa-api/index.php?q=product.all')
     .then((response) => {
       if (response.ok) {
         return response.json()
@@ -25,9 +27,13 @@ export default function ProductIndex() {
     })
   }, [])
 
-  if (loading) return 'Chargement...'
+  if (loading) return (
+    <section id="product-index">Chargement...</section>
+  )
   
-  if (error) return 'Erreur!'
+  if (error) return (
+    <section id="product-index">Erreur avec le chargement des produits</section>
+  )
 
   return (
     <section id="product-index">

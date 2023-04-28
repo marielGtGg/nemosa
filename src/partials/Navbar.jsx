@@ -34,8 +34,8 @@ export default function Navbar({mainTop}) {
         </Link>
         <Link to="/panier">
           <div className="cart">
-            <img src="img/icons/shopping-cart.svg" alt="Panier" />
-            <span className="cart-quantity">{cartQuantity}</span>
+            <div><i className="fa-solid fa-cart-shopping"></i></div>
+            <div className="cart-quantity"><span>{cartQuantity}</span></div>
           </div>
         </Link>
       </div>
