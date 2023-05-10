@@ -330,7 +330,7 @@ section {
 #product-teaser .products figcaption {
     position: absolute;
     font-size: .75rem;
-    padding: .1rem .4rem;
+    padding: .1rem 0;
     width: 35vw;
 }
 
@@ -398,8 +398,17 @@ section {
     color: var(--babyPowder);
 }
 
+#portfolio .container {
+    width: 80vmin;
+    margin: 0 auto;
+}
+
 #portfolio h1 {
     color: var(--babyPowder);
+}
+
+#portfolio .slider {
+    height: 80vmin;
 }
 
 /* SERVICES */

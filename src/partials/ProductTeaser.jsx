@@ -32,7 +32,6 @@ export default function ProductTeaser() {
   
   if (error) return 'Erreur!'
 
-  console.log(products)
   return (
     <section id="product-teaser">
       <div className="products">
