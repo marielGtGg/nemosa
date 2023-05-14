@@ -1,7 +1,7 @@
 import React from 'react'
 import { useCart } from '../contexts/CartContext'
 
-export default function ItemQtyHandler(id) {
+export default function ItemQtyHandler({id}) {
 
   const {
     getItemQuantity, 
