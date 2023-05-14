@@ -19,6 +19,7 @@ export default function Cart() {
         })} 
       </div>
       <button onClick={() => emptyCart()}>Vider<span className="cart-quantity">{cartQuantity}</span></button>
+      <button className="btn-outline">Procéder au paiement</button>
     </section>
   )
 }
