@@ -83,6 +83,50 @@ button, input[type="submit"], input[type="reset"] {
 	outline: inherit;
 }
 
+/* UTILITIES */
+
+.item-qty-handler {
+    text-align: center;
+}
+
+.item-qty-handler .btn-outline {
+    margin: .25rem 0 .75rem;
+}
+
+.item-qty-handler .qty-group {
+    background-color: var(--thistle);
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    position: relative;
+    padding: .75rem 1.25rem;
+}
+
+.item-qty-handler .qty-handler {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.item-qty-handler .qty {
+    font-size: 1.25rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--honeyDew); */
+    border-radius: 50%;
+    border: solid 1px var(--paynesGray);
+}
+
+.item-qty-handler .remove {
+    position: absolute;
+    right: 1.25rem;
+    top: 0;
+    height: 100%;
+}
+
 /* PARALLAX */
 .wrapper {
     position: relative;
@@ -138,13 +182,17 @@ nav  {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    z-index: 1000;
     transition: all .5s;
+}
+
+#nav-clearfix {
+    height: 3rem;
 }
 
 
 nav .navbar {
     height: 3rem;
+    border-bottom: solid 3px var(--paynesGray);
     padding: .5rem 5vw;
     display: flex;
     justify-content: space-between;
@@ -154,20 +202,21 @@ nav .navbar {
 
 nav .navbar .cart {
     position: relative;
-    margin-top: .5rem;
-    font-size: 1.5rem;
+    margin: .25rem 0 0;
+    font-size: 1.25rem;
+    display: block;
 }
 
 nav .navbar .cart-quantity {
     position: absolute;
-    top: -.5rem;
-    right: -.5rem;
+    top: -.4rem;
+    right: -.4rem;
     background-color: var(--brownSugar);
     color: var(--babyPowder);
     text-align: start;
     border-radius: 50%;
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 1.1rem;
+    width: 1.1rem;
     font-size: .75rem;
     display: flex;
     justify-content: center;
@@ -175,7 +224,8 @@ nav .navbar .cart-quantity {
 }
 
 nav .navbar img {
-    max-height: 2rem;
+    display: block;
+    max-height: 1.5rem;
 }
 
 nav .hamburger span {
@@ -445,6 +495,7 @@ section {
 #product-index .product-grid .product-card img {
     height: 16rem;
     object-fit: cover;
+    display: block;
 }
 
 @media (min-width: 600px) {
@@ -460,7 +511,7 @@ section {
 } 
 
 #product-index .card-body {
-    padding: .5rem;
+    padding: .75rem;
     text-align: start;
 }
 
@@ -470,30 +521,25 @@ section {
     font-size: 1.5rem;
 }
 
-#product-index .card-actions {
-    text-align: center;
-    padding: .5rem;
+/* CART */
+
+#cart {
+    padding: 0;
 }
 
-#product-index .qty-group {
-    display: flex;
-    justify-content: center;
-    gap: .5rem;
+#cart h1 {
+    background-color: var(--thistle);
+    padding: 0 5vw;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
-#product-index .qty-handler {
-    display: flex;
-    align-items: center;
-}
-
-#product-index .qty {
-    width: 2rem;
-}
-
-.button-89 {
-  border: 1px solid rgb(var(--violetRGB));
+.btn-outline {
+  border: 1px solid var(--brownSugar);
   background-color: transparent;
-  color: rgb(var(--violetRGB));
+  color: var(--brownSugar);
+  font-weight: 600;
   height: 40px;
   line-height: 20px;
   list-style: none;
@@ -508,8 +554,8 @@ section {
   touch-action: manipulation;
 }
 
-.button-89:hover,
-.button-89:focus {
+.btn-outline:hover,
+.btn-outilne:focus {
   background-color: rgb(var(--violetRGB));
   color: rgb(var(--whiteRGB));
 }

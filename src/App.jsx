@@ -14,18 +14,19 @@ export const CartContext = createContext({});
 
 export default function App() {
   const main = useRef()
-  const [mainTop, setMainTop] = useState()
+  // const [mainTop, setMainTop] = useState()
 
-  const  handleScroll = () => {
-    setMainTop(main.current.getBoundingClientRect().top)
-  }
+  // const  handleScroll = () => {
+  //   setMainTop(main.current.getBoundingClientRect().top)
+  // }
 
   return (
     <CartProvider>
       <header>
-        <Navbar mainTop={mainTop} />
+        {/* <Navbar mainTop={mainTop} /> */}
+        <Navbar />
       </header>
-      <div className="wrapper" onScroll={handleScroll}>
+      {/* <div className="wrapper" onScroll={handleScroll}>
         <div className="banner">
           <img
             id="growth-rings"
@@ -38,7 +39,7 @@ export default function App() {
             src="img/logo/nem_sa.svg"
             alt="NEMOSA"
           />
-        </div>
+        </div> */}
         <main className="main-container" ref={main}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -53,7 +54,7 @@ export default function App() {
         <footer>
           <Contact />
         </footer>
-      </div>
+      {/* </div> */}
     </CartProvider>
   );
 }

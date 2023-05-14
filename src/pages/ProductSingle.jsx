@@ -3,11 +3,12 @@ import { useParams } from "react-router-dom"
 
 export default function ProductSingle() {
   const { id } = useParams()
+  console.log(id)
   const [product, setProduct] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   useEffect(() => {
-    fetch('http://localhost/nemosa-api/index.php?page=product.find&id=' + id)
+    fetch('http://localhost/nemosa-api/index.php?q=product.find&id=' + id)
     .then((response) => {
       if (response.ok) {
         return response.json()

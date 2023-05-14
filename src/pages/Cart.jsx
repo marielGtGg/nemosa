@@ -1,15 +1,24 @@
 import { useCart } from '../contexts/CartContext'
+import CartItem from '../components/CartItem'
 
 export default function Cart() {
   const {
     cartQuantity,
-    emptyCart
+    emptyCart,
+    cartItems
   } = useCart()
 
+  console.log(cartItems)
+
   return (
-    <section>
-      <h1>Panier<span className="cart-quantity">{cartQuantity}</span></h1>
-      <button onClick={() => emptyCart()}>Vider</button>
+    <section id="cart">
+      <h1>Panier</h1>
+      <div className="cart-item-list">
+        {cartItems.map(cartItem => {
+          return <CartItem key={cartItem.id} cartItem={cartItem} />
+        })} 
+      </div>
+      <button onClick={() => emptyCart()}>Vider<span className="cart-quantity">{cartQuantity}</span></button>
     </section>
   )
 }
