@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react'
 import ImageSlider from '../utilities/ImageSlider'
 
 export default function Portfolio() {
-  const instagramKey = 'IGQVJWdC10NGE3eXlqMW9OUllsbkdUczVQaFFWbm1oNWJlNDI1Y3JXX2o5SkpwQzZARWG9mc1NwUnVfMDR5bzI3MlFTY0V6dVJaUUdtdmZAQM0RyeUJTRzlsZADR3a0tnYUFwQkhwQ0xEM1hGUUdOR0VqbgZDZD'
+
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=' + instagramKey)
+    fetch('https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=' + import.meta.env.VITE_INSTAGRAM_KEY)
     .then((response) => {
       if (response.ok) {
         return response.json()

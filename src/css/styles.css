@@ -319,9 +319,9 @@ section {
     transition: all .25s ease-out;
 }
 
-#product-teaser .products img:hover {
+/* #product-teaser .products img:hover {
     transform: scale(1.05);
-}
+} */
 
 #product-teaser .products figure {
     position: relative;
