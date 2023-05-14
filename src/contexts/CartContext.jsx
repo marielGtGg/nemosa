@@ -7,7 +7,7 @@ export function useCart() {
 }
 
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useLocalStorage([])
 
   const cartQuantity = cartItems.reduce(
     (accumulator, item) => accumulator + item.quantity,
