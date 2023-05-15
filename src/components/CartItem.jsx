@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react'
+import formatPrice from '../utilities/formatPrice'
+import ItemQtyHandler from '../utilities/ItemQtyHandler'
 
 export default function CartItem({cartItem}) {
 
@@ -32,7 +34,21 @@ export default function CartItem({cartItem}) {
   
   if (error) return 'Erreur!'
 
+  if (item == null) return null
+
+  const {
+    name,
+    img,
+    price
+  } = item
+
   return (
-    <div>{item.name} {quantity}</div>
+    <div>
+      <img src={img} alt={name} />
+      <div>{name}</div>
+      <div><ItemQtyHandler id={id} /></div>
+      <div>{formatPrice(price, true)}</div>
+      <div>{formatPrice(price * quantity, true)}</div>
+    </div>
   )
 }

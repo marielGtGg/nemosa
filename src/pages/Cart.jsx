@@ -18,6 +18,9 @@ export default function Cart() {
           return <CartItem key={cartItem.id} cartItem={cartItem} />
         })} 
       </div>
+      <div>Total : 
+        {cartItems.reduce((accumulator, item) => accumulator + item.quantity, 0)}
+      </div>
       <button onClick={() => emptyCart()}>Vider<span className="cart-quantity">{cartQuantity}</span></button>
       <button className="btn-outline">Procéder au paiement</button>
     </section>
