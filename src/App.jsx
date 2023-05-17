@@ -9,6 +9,7 @@ import ProductSingle from "./pages/ProductSingle";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 import Contact from "./partials/Contact";
+import CheckoutSuccess from "./pages/CheckoutSuccess";
 
 export const CartContext = createContext({});
 
@@ -48,6 +49,7 @@ export default function App() {
               <Route path=":id" element={<ProductSingle />} />
             </Route>
             <Route path="/panier" element={<Cart />} />
+            <Route path="/merci" element={<CheckoutSuccess />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

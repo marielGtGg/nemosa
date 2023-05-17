@@ -3,6 +3,7 @@ import CartItem from '../components/CartItem'
 import { useEffect, useState } from 'react'
 import productFind from '../services/productFind'
 import formatPrice from '../utilities/formatPrice'
+import Loading from '../components/Loading'
 
 export default function Cart() {
   
@@ -13,7 +14,7 @@ export default function Cart() {
   } = useCart()
 
   const [products, setProducts] = useState([])
-  const [cartItemsWithProduct, setCartItemsWithProduct] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const fetchProducts = () => {
     let productsPromises = []
@@ -24,43 +25,42 @@ export default function Cart() {
 
     Promise.all(productsPromises)
     .then((productsData) => {
-      const newCartItemsWithProduct = cartItems.map(item => {
-        const newProduct = productsData.find(product => product.id === item.id)
-        return {...item, product: newProduct}
-      })
-
-      setCartItemsWithProduct(newCartItemsWithProduct)
       setProducts(productsData)
+    })
+    .catch(error => {
+      console.error('error : ' + error)
+    })
+    .finally(() => {
+      setLoading(false)
     })
   }
 
   useEffect(() => {
-    console.log(products)
-    if (products.length === 0) {
-      fetchProducts()
-    } else {
-      console.log('update')
-      const newCartItemsWithProduct = cartItems.map(item => {
-        const newProduct = products.find(product => product.id === item.id)
-        return {...item, product: newProduct}
-      })
-      setCartItemsWithProduct(newCartItemsWithProduct)
-    }
-  }, cartItems)
+    fetchProducts()
+  }, [])
 
   return (
     <section id="cart">
       <h1>Panier</h1>
-      <div className="cart-item-list">
-        {cartItemsWithProduct.map(cartItemWithProduct => {
-          return <CartItem key={cartItemWithProduct.id} cartItemWithProduct={cartItemWithProduct} />
-        })} 
-      </div>
-      <div>Total : 
-        {formatPrice(cartItemsWithProduct.reduce((accumulator, item) => accumulator + item.quantity * item.product.price/100, 0))}
-      </div>
-      <button onClick={() => emptyCart()}>Vider<span className="cart-quantity">{cartQuantity}</span></button>
-      <button className="btn-outline">Procéder au paiement</button>
+      {cartItems.length === 0 ? (
+        <div className="message">Votre panier est vide.</div>
+      ) : (loading ? <Loading/> :
+          <>
+            <div className="cart-item-list">
+                {cartItems.map(item => <CartItem key={item.id} item={item} product={products.find(product => product.id === item.id)} />)} 
+            </div>
+            <div className="total">
+              <div>Total</div>
+              <div>
+                {formatPrice(cartItems.reduce((accumulator, item) => accumulator + item.quantity * products.find(product => product.id === item.id).price/100, 0))}
+              </div> 
+            </div>
+            <div className="actions">
+              <button className="btn-light" onClick={() => emptyCart()}>Vider</button>
+              <button className="btn-outline">Procéder au paiement</button>
+            </div>
+          </>
+      )}
     </section>
   )
 }

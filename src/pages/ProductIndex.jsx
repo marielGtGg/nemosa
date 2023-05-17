@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import ProductCard from '../components/ProductCard'
+import Loading from '../components/Loading'
 
 export default function ProductIndex() {
 
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
 
   useEffect(() => {
     fetch('http://localhost/nemosa-api/index.php?q=product.all')
@@ -20,29 +20,22 @@ export default function ProductIndex() {
     })
     .catch(error => {
       console.error('error : ' + error)
-      setError(error)
     })
     .finally(() => {
       setLoading(false)
     })
   }, [])
 
-  if (loading) return (
-    <section id="product-index">Chargement...</section>
-  )
-  
-  if (error) return (
-    <section id="product-index">Erreur avec le chargement des produits</section>
-  )
-
   return (
     <section id="product-index">
       <h1>Produits</h1>
-      <div className="product-grid">
-        {products.map(product => {
-          return <ProductCard key={product.id} product={product} />
-        })} 
-      </div>
+      {loading ? <Loading /> :
+        <div className="product-grid">
+          {products.map(product => {
+            return <ProductCard key={product.id} product={product} />
+          })} 
+        </div>
+      }
     </section>
   )   
 }

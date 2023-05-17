@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* --- General --- */
@@ -90,14 +90,26 @@ button, input[type="submit"], input[type="reset"] {
     font-weight: 600;
     padding: 10px 16px;
     text-align: center;
-  }
+}
   
-  .btn-outline:hover,
-  .btn-outilne:focus {
-    background-color: rgb(var(--violetRGB));
-    color: rgb(var(--whiteRGB));
-  }
+.btn-outline:hover,
+.btn-outilne:focus {
+    background-color: var(--brownSugar);
+    color: var(--offWhite);
+    /* border-color: var(--paynesGray); */
+}
   
+.btn-light {
+    color: var(--brownSugar);
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.loading {
+    font-size: 2rem;
+    padding: 5rem 0;
+    text-align: center;
+}
 
 /* UTILITIES */
 
@@ -552,6 +564,11 @@ section {
     margin: 0;
 }
 
+#cart .message {
+    padding-top: 5rem;
+    text-align: center;
+}
+
 #cart .cart-item {
     display: flex;
     gap: .75rem;
@@ -597,4 +614,30 @@ section {
     width: 1.75rem;
     background-color: var(--honeyDew);
     border-color: transparent;
+}
+
+#cart .total,
+#cart .actions {
+    display: flex;
+    justify-content: space-between;
+    padding: .75rem;
+    font-weight: 600;
+}
+
+#not-found {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#not-found p {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+#not-found button {
+    margin-top: 3rem;
+}
+
+#not-found button:hover a {
+    color: var(--offWhite);
 }

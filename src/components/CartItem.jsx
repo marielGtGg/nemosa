@@ -1,9 +1,9 @@
 import formatPrice from '../utilities/formatPrice'
 import ItemQtyHandler from '../utilities/ItemQtyHandler'
 
-export default function CartItem({cartItemWithProduct}) {
+export default function CartItem({item, product}) {
 
-  const {id, quantity, product} = cartItemWithProduct
+  const {id, quantity} = item
 
   const {
     name,
