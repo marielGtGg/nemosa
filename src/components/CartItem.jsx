@@ -1,54 +1,29 @@
-import React, {useEffect, useState} from 'react'
 import formatPrice from '../utilities/formatPrice'
 import ItemQtyHandler from '../utilities/ItemQtyHandler'
 
-export default function CartItem({cartItem}) {
+export default function CartItem({cartItemWithProduct}) {
 
-  const {id, quantity} = cartItem
-
-  const [item, setItem] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  
-  useEffect(() => {
-    fetch('http://localhost/nemosa-api/index.php?q=product.find&id=' + id)
-    .then((response) => {
-      if (response.ok) {
-        return response.json()
-      }
-      throw response
-    })
-    .then((data) => {
-      setItem(data)
-    })
-    .catch(error => {
-      console.error('error : ' + error)
-      setError(error)
-    })
-    .finally(() => {
-      setLoading(false)
-    })
-  }, [])
-
-  if (loading) return 'Chargement...'
-  
-  if (error) return 'Erreur!'
-
-  if (item == null) return null
+  const {id, quantity, product} = cartItemWithProduct
 
   const {
     name,
     img,
     price
-  } = item
+  } = product
 
   return (
-    <div>
+    <div className="cart-item">
       <img src={img} alt={name} />
-      <div>{name}</div>
-      <div><ItemQtyHandler id={id} /></div>
-      <div>{formatPrice(price, true)}</div>
-      <div>{formatPrice(price * quantity, true)}</div>
+      <div>
+        <div>
+          {name}
+          <br/><span className="unit-price">{formatPrice(price, true)}</span>
+        </div>
+        <ItemQtyHandler id={id} />
+      </div>
+      <div>
+        <div>{formatPrice(price * quantity, true)}</div>
+      </div>
     </div>
   )
 }

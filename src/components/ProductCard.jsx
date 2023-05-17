@@ -1,3 +1,4 @@
+import { useCart } from '../contexts/CartContext'
 import ItemQtyHandler from '../utilities/ItemQtyHandler'
 import formatPrice from '../utilities/formatPrice'
 
@@ -12,6 +13,13 @@ export default function ProductCard({product}) {
     measurements, 
     description
   } = product
+
+  const {
+    getItemQuantity, 
+    increaseItemQuantity, 
+  } = useCart()
+
+  const quantity = getItemQuantity(id)
 
   return (
     <div className="product-card">
@@ -33,7 +41,11 @@ export default function ProductCard({product}) {
         <div>{description}</div>
       </div>
       <div className="card-actions">
-        <ItemQtyHandler id={id} />
+          {quantity === 0 ? (
+              <button className='btn-outline add' onClick={() => increaseItemQuantity(id)}>Ajouter au panier</button>
+          ) : (
+            <ItemQtyHandler id={id} />
+          )}
       </div>
     </div>
   )
