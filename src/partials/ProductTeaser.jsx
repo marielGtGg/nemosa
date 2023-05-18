@@ -36,14 +36,14 @@ export default function ProductTeaser() {
             <img src={products.teaser1.img} alt={products.teaser1.name} />
             <figcaption>
               {products.teaser1.name}
-              <br />{formatPrice(products.teaser1.price, true)}
+              {/* <br />{formatPrice(products.teaser1.price, true)} */}
             </figcaption>
           </figure>
 
           <figure id="teaser2">
             <figcaption>
               {products.teaser2.name}
-              <br />{formatPrice(products.teaser2.price, true)}
+              {/* <br />{formatPrice(products.teaser2.price, true)} */}
             </figcaption>
             <img src={products.teaser2.img} alt={products.teaser2.name} />
           </figure>
@@ -52,7 +52,7 @@ export default function ProductTeaser() {
             <img src={products.teaser3.img} alt={products.teaser3.name} />
             <figcaption>
               {products.teaser3.name}
-              <br />{formatPrice(products.teaser3.price, true)}
+              {/* <br />{formatPrice(products.teaser3.price, true)} */}
             </figcaption>
           </figure>
         </div>

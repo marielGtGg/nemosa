@@ -28,7 +28,7 @@ export default function ProductIndex() {
 
   return (
     <section id="product-index">
-      <h1>Produits</h1>
+      <h1>Boutique</h1>
       {loading ? <Loading /> :
         <div className="product-grid">
           {products.map(product => {

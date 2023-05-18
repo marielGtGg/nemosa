@@ -4,17 +4,19 @@ import { useEffect, useState } from 'react'
 import productFind from '../services/productFind'
 import formatPrice from '../utilities/formatPrice'
 import Loading from '../components/Loading'
+import { Link } from 'react-router-dom'
+import cartCheckout from '../services/cartCheckout'
 
 export default function Cart() {
   
   const {
-    cartQuantity,
     emptyCart,
     cartItems
   } = useCart()
 
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  // const [cartResponse, setCartResponse] = useState([])
 
   const fetchProducts = () => {
     let productsPromises = []
@@ -24,7 +26,7 @@ export default function Cart() {
     })
 
     Promise.all(productsPromises)
-    .then((productsData) => {
+    .then(productsData => {
       setProducts(productsData)
     })
     .catch(error => {
@@ -34,16 +36,30 @@ export default function Cart() {
       setLoading(false)
     })
   }
-
+  
   useEffect(() => {
     fetchProducts()
   }, [])
+  
+  const handleCheckout = () => {
+    console.log('allo')
+    cartCheckout()
+    .then(data => {
+      // setCartResponse(data)
+    })
+    .catch(error => {
+      console.error('error : ' + error)
+    })
+  }
 
   return (
     <section id="cart">
       <h1>Panier</h1>
       {cartItems.length === 0 ? (
-        <div className="message">Votre panier est vide.</div>
+          <div className="message">
+            <p className="lead">Votre panier est vide.</p>
+            <button className="btn-outline"><Link to="/boutique">Boutique</Link></button>
+          </div>
       ) : (loading ? <Loading/> :
           <>
             <div className="cart-item-list">
@@ -57,8 +73,10 @@ export default function Cart() {
             </div>
             <div className="actions">
               <button className="btn-light" onClick={() => emptyCart()}>Vider</button>
-              <button className="btn-outline">Procéder au paiement</button>
+              <button className="btn-outline" onClick={handleCheckout}>Procéder au paiement</button>
             </div>
+            {/* <div>{cartResponse.toString()}</div> */}
+            <div className="back"><i className="fa-solid fa-arrow-left-long"></i><Link to="/boutique">Boutique</Link></div>
           </>
       )}
     </section>

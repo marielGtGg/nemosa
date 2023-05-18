@@ -1,4 +1,3 @@
-import {useEffect} from 'react'
 
 export default function productFind(id) {
 
@@ -11,7 +10,6 @@ export default function productFind(id) {
       throw response
     })
     .then((data) => {
-      console.log(data)
       resolve(data)
     })
     .catch(error => {

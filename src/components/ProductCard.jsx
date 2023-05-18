@@ -30,19 +30,19 @@ export default function ProductCard({product}) {
       </div>
       <div className="card-body">
         <div className="card-title">
-          <span className="hover-highlight">
+          <span className="name">
             <a href={'/boutique/' + id}>{name}</a>
           </span>
-          <span className="price hover-highlight">{formatPrice(price, true)}</span>
+          <span className="price">{formatPrice(price, true)}</span>
         </div>
-        <div>{woods}</div>
-        <div>{finish}</div>
-        <div>{measurements}</div>
-        <div>{description}</div>
+        <div><i className="fa-solid fa-leaf"></i>{woods}</div>
+        <div><i className="fa-solid fa-brush"></i>{finish}</div>
+        <div><i className="fa-solid fa-ruler"></i>{measurements}</div>
+        <div><i className="fa-solid fa-fire"></i>{description}</div>
       </div>
       <div className="card-actions">
           {quantity === 0 ? (
-              <button className='btn-outline add' onClick={() => increaseItemQuantity(id)}>Ajouter au panier</button>
+            <button className='add' onClick={() => increaseItemQuantity(id)}>Ajouter au panier</button>
           ) : (
             <ItemQtyHandler id={id} />
           )}
