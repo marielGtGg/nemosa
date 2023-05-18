@@ -13,7 +13,7 @@ export default function ImageSlider({ slides }) {
     backgroundImage: 'url(' + slides[currentIndex].media_url + ')',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    borderRadius: '1rem',
+    borderRadius: '.5rem',
   }
 
   const leftArrowStyles = {

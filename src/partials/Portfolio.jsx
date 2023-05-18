@@ -28,8 +28,8 @@ export default function Portfolio() {
   
   return (
     <section id="portfolio">
+      <h1>Réalisations</h1>
       <div className="container">
-        <h1>Réalisations</h1>
         {loading ? <Loading/> :
 
           <div className="slider">
