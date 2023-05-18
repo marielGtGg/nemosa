@@ -7,6 +7,7 @@ export default function ProductCard({product}) {
     id, 
     name, 
     img, 
+    price_id,
     price,
     woods,
     finish,
@@ -42,7 +43,7 @@ export default function ProductCard({product}) {
       </div>
       <div className="card-actions">
           {quantity === 0 ? (
-            <button className='add' onClick={() => increaseItemQuantity(id)}>Ajouter au panier</button>
+            <button className='add' onClick={() => increaseItemQuantity(id, price_id)}>Ajouter au panier</button>
           ) : (
             <ItemQtyHandler id={id} />
           )}

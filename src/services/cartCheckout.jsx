@@ -1,10 +1,9 @@
-import React from 'react'
-
-export default function cartCheckout() {
+export default function cartCheckout(cartItems) {
 
   const body = {
     success_url: 'http://localhost:5173/merci',
-    cancel_url: 'http://localhost:5173/panier'
+    cancel_url: 'http://localhost:5173/panier',
+    items: cartItems
   }
 
   return new Promise((resolve, reject) => {

@@ -19,10 +19,10 @@ export function CartProvider({ children }) {
     return cartItems.find(item => item.id === id)?.quantity || 0
   }
 
-  function increaseItemQuantity(id) {
+  function increaseItemQuantity(id, price_id) {
     setCartItems(currentItems => {
       if (currentItems.find(item => item.id === id) == null) {
-        return [...currentItems, { id, quantity: 1 }]
+        return [...currentItems, { id, price_id, quantity: 1 }]
       } else {
         return currentItems.map(item => {
           if (item.id === id) {

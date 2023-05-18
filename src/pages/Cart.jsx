@@ -16,7 +16,6 @@ export default function Cart() {
 
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
-  // const [cartResponse, setCartResponse] = useState([])
 
   const fetchProducts = () => {
     let productsPromises = []
@@ -42,7 +41,7 @@ export default function Cart() {
   }, [])
   
   const handleCheckout = () => {
-    cartCheckout()
+    cartCheckout(cartItems)
     .then(data => {
       location.href = data.checkout_url
     })
@@ -74,7 +73,6 @@ export default function Cart() {
               <button className="btn-light" onClick={() => emptyCart()}>Vider</button>
               <button className="btn-outline" onClick={handleCheckout}>Procéder au paiement</button>
             </div>
-            {/* <div>{cartResponse.toString()}</div> */}
             <div className="back"><i className="fa-solid fa-arrow-left-long"></i><Link to="/boutique">Boutique</Link></div>
           </>
       )}
