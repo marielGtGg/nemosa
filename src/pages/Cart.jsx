@@ -42,10 +42,9 @@ export default function Cart() {
   }, [])
   
   const handleCheckout = () => {
-    console.log('allo')
     cartCheckout()
     .then(data => {
-      // setCartResponse(data)
+      location.href = data.checkout_url
     })
     .catch(error => {
       console.error('error : ' + error)

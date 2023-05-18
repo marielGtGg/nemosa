@@ -1,11 +1,12 @@
 import React from 'react'
 
 export default function cartCheckout() {
-  console.log('checkout')
+
   const body = {
-    success_url: 'http://localhost:5173/merci'
+    success_url: 'http://localhost:5173/merci',
+    cancel_url: 'http://localhost:5173/panier'
   }
-  
+
   return new Promise((resolve, reject) => {
     fetch('http://localhost/nemosa-api/index.php?q=cart.checkout', {
       method: 'POST',
@@ -21,7 +22,6 @@ export default function cartCheckout() {
       throw response
     })
     .then((data) => {
-      console.log(data)
       resolve(data)
     })
     .catch(error => {
