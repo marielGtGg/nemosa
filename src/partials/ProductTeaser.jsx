@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
-import formatPrice from '../utilities/formatPrice'
+import { HashLink } from 'react-router-hash-link'
 import Loading from '../components/Loading'
 
 export default function ProductTeaser() {
@@ -29,36 +29,38 @@ export default function ProductTeaser() {
 
   return (
     <section id="product-teaser">
+      <h2>Objets en bois & projets sur mesure</h2>
       {loading ? <Loading /> : 
 
         <div className="products">
-          <figure id="teaser1">
-            <img src={products.teaser1.img} alt={products.teaser1.name} />
-            <figcaption>
-              {products.teaser1.name}
-              {/* <br />{formatPrice(products.teaser1.price, true)} */}
-            </figcaption>
-          </figure>
-
-          <figure id="teaser2">
-            <figcaption>
-              {products.teaser2.name}
-              {/* <br />{formatPrice(products.teaser2.price, true)} */}
-            </figcaption>
-            <img src={products.teaser2.img} alt={products.teaser2.name} />
-          </figure>
-
-          <figure id="teaser3">
-            <img src={products.teaser3.img} alt={products.teaser3.name} />
-            <figcaption>
-              {products.teaser3.name}
-              {/* <br />{formatPrice(products.teaser3.price, true)} */}
-            </figcaption>
-          </figure>
+          <HashLink to={'/boutique#' + products.teaser1.id}>
+            <figure id="teaser1">
+              <img src={products.teaser1.img} alt={products.teaser1.name} />
+              <figcaption>
+                {products.teaser1.name}
+              </figcaption>
+            </figure>
+          </HashLink>
+          <HashLink to={'/boutique#' + products.teaser2.id}>
+            <figure id="teaser2">
+              <figcaption>
+                {products.teaser2.name}
+              </figcaption>
+              <img src={products.teaser2.img} alt={products.teaser2.name} />
+            </figure>
+          </HashLink>
+          <HashLink to={'/boutique#' + products.teaser3.id}>
+            <figure id="teaser3">
+              <img src={products.teaser3.img} alt={products.teaser3.name} />
+              <figcaption>
+                {products.teaser3.name}
+              </figcaption>
+            </figure>
+          </HashLink>
         </div>
 
       }
-      <Link to="/boutique"><h1>Boutique<i className="fa-solid fa-arrow-right-long"></i></h1></Link>
+      <Link to="/boutique"><h1>Voir les produits<i className="fa-solid fa-arrow-right-long"></i></h1></Link>
     </section>
   )
 }

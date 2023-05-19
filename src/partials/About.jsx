@@ -10,7 +10,7 @@ export default function About() {
 
   return (
     <section id="about">
-      <img src="img/antoine.jpg" alt="Antoine Gauthier-Grégoire" />
+      <img src="img/antoine2.jpg" alt="Antoine Gauthier-Grégoire" />
       <h1>Je suis ébéniste</h1>
       <div className="body">
         <p className="lead">Maniant la chainsaw et le rabot, je révèle la beauté de nos forêts.</p>

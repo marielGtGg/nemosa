@@ -2,7 +2,7 @@ import { useCart } from '../contexts/CartContext'
 import ItemQtyHandler from '../utilities/ItemQtyHandler'
 import formatPrice from '../utilities/formatPrice'
 
-export default function ProductCard({product}) {
+export default function ProductCard({product, noTitle}) {
   const { 
     id, 
     name, 
@@ -23,7 +23,7 @@ export default function ProductCard({product}) {
   const quantity = getItemQuantity(id)
 
   return (
-    <div className="product-card">
+    <div id={id} className="product-card">
       <div className="card-img">
         <a href={'/boutique/' + id}>
           <img src={img} alt={name} />
@@ -31,17 +31,19 @@ export default function ProductCard({product}) {
       </div>
       <div className="card-body">
         <div className="card-title">
+          {noTitle ? '' :
           <span className="name">
             <a href={'/boutique/' + id}>{name}</a>
           </span>
+          }
           <span className="price">{formatPrice(price, true)}</span>
         </div>
         <div><i className="fa-solid fa-leaf"></i>{woods}</div>
         <div><i className="fa-solid fa-brush"></i>{finish}</div>
         <div><i className="fa-solid fa-ruler"></i>{measurements}</div>
-        <div><i className="fa-solid fa-fire"></i>{description}</div>
+        <div className="description">{description}</div>
       </div>
-      <div className="card-actions">
+      <div className={'card-actions ' + (quantity > 0 ? 'in-cart' : '')}>
           {quantity === 0 ? (
             <button className='add' onClick={() => increaseItemQuantity(id, price_id)}>Ajouter au panier</button>
           ) : (

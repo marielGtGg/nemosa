@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from "react-router-dom"
 import Loading from '../components/Loading'
+import ProductCard from '../components/ProductCard'
+import { Link } from 'react-router-dom'
 
 export default function ProductSingle() {
   const { id } = useParams()
@@ -30,13 +32,11 @@ export default function ProductSingle() {
 
   return (
     <section id="product-single">
+      <h1>{product.name}</h1>
       {loading ? <Loading/> :
-        <>
-          <h1>{product.name}</h1>
-          <img src={product.img} alt={product.name} />
-          <p>{product.description}</p>
-        </>
+        <ProductCard key={product.id} product={product} noTitle={true} />
       }
+      <div className="back"><i className="fa-solid fa-arrow-left-long"></i><Link to="/boutique">Boutique</Link></div>
     </section>
   )   
 }

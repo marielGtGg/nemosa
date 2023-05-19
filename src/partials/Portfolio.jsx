@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import ImageSlider from '../utilities/ImageSlider'
 import Loading from '../components/Loading'
 
@@ -28,7 +28,10 @@ export default function Portfolio() {
   
   return (
     <section id="portfolio">
-      <h1>Réalisations</h1>
+      <div className="header">
+        <h1>Dernières réalisations</h1>
+        <div className="instagram-logo"><i className="fa-brands fa-instagram"></i></div>
+      </div>
       <div className="container">
         {loading ? <Loading/> :
 

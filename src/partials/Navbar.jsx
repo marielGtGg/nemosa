@@ -24,9 +24,9 @@ export default function Navbar({mainTop} = null) {
   return (
     <>
     {/* <nav style={{height: (active ? '100vh' : 'auto'), top: (show ? 0 : '-3rem')}}> */}
-    <nav style={{height: (active ? '100vh' : 'auto')}}>
+    <nav onClick={() => {active && handleClick()}} style={{height: (active ? '100vh' : 'auto')}}>
       <div className="navbar">
-        <button className="hamburger" onClick={handleClick}>
+        <button className={'hamburger ' + (active ? 'active' : '')} onClick={handleClick}>
           <span></span>
           <span></span>
           <span></span>
@@ -37,7 +37,9 @@ export default function Navbar({mainTop} = null) {
         <Link to="/panier">
           <div className="cart">
             <div><i className="fa-solid fa-cart-shopping"></i></div>
-            <div className="cart-quantity"><span>{cartQuantity}</span></div>
+            {cartQuantity > 0 && 
+              <div className="cart-quantity"><span>{cartQuantity}</span></div>
+            }
           </div>
         </Link>
       </div>
