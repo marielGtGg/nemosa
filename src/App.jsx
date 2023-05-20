@@ -27,20 +27,7 @@ export default function App() {
         {/* <Navbar mainTop={mainTop} /> */}
         <Navbar />
       </header>
-      {/* <div className="wrapper" onScroll={handleScroll}>
-        <div className="banner">
-          <img
-            id="growth-rings"
-            src="img/logo/growth_rings.svg"
-            alt="Texture de bois"
-          />
-          <img id="o-inline" src="img/logo/o_inline.svg" alt="" />
-          <img
-            id="nemosa"
-            src="img/logo/nem_sa.svg"
-            alt="NEMOSA"
-          />
-        </div> */}
+      {/* <div className="wrapper" onScroll={handleScroll}> */}
         <main className="main-container" ref={main}>
           <Routes>
             <Route path="/" element={<Home />} />

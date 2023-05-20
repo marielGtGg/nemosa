@@ -17,7 +17,7 @@ export default function Collapsible({data}) {
     <div className="collapsible">
       <div className="title" onClick={handleClick}>{title}</div>
       <div className={'content ' + (shown ? '' : 'hidden')}>
-        {content.map(paragraph => {return (<p>{paragraph}</p>)})}
+        {content.map((paragraph, index) => {return (<p key={index}>{paragraph}</p>)})}
       </div>
     </div>
   )

@@ -53,7 +53,6 @@ export default function Navbar({mainTop} = null) {
         </ul>
       </div>
     </nav>
-    <div id="nav-clearfix"></div>
     </>
   )
 }

@@ -154,7 +154,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 /* PARALLAX */
-.wrapper {
+/* .wrapper {
     position: relative;
     height: 100vh;
     overflow-y: auto;
@@ -197,7 +197,7 @@ button, input[type="submit"], input[type="reset"] {
 
 #o-inline {
     transform: translateZ(-50px) scale(1.5);
-}
+} */
 
 /* --- NAV --- */
 
@@ -209,6 +209,7 @@ nav  {
 
 #nav-clearfix {
     height: 3rem;
+    background-color: var(--paynesGray);
 }
 
 
@@ -334,6 +335,51 @@ section {
 
 .nav li:last-child {
     display: flex;
+}
+
+/* BANNER */
+
+#banner {
+    padding: 0;
+    height: 100vh;
+    position: relative;
+    z-index: 3;
+    background-color: var(--ashGray);
+    overflow: hidden;
+    background-image: url(../../public/img/logo/growth_rings.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner .top {
+    height: 50vh;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+#banner .top ul {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+#banner .top .subtitle {
+    font-family: Kanit, sans-serif;
+    font-size: 2rem;
+    padding-top: .5rem;
+}
+
+#banner > img {
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    height: 50vh;
+    object-fit: cover;
 }
 
 /* ABOUT */
