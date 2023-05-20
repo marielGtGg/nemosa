@@ -343,22 +343,23 @@ section {
     padding: 0;
     height: 100vh;
     position: relative;
-    z-index: 3;
-    background-color: var(--ashGray);
+    z-index: 4;
+    background-color: var(--paynesGray);
     overflow: hidden;
     background-image: url(../../public/img/logo/growth_rings.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    margin-top: -3rem;
 }
 
 #banner .top {
-    height: 50vh;
-    padding-bottom: 3rem;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: center;
+    padding-bottom: 3rem;
 }
 
 #banner .top ul {
@@ -370,15 +371,17 @@ section {
 
 #banner .top .subtitle {
     font-family: Kanit, sans-serif;
-    font-size: 2rem;
+    color: var(--ashGray);
+    text-transform: uppercase;
+    font-size: 1.8rem;
     padding-top: .5rem;
 }
 
 #banner > img {
     position: absolute;
-    top: 50vh;
+    top: 40vh;
     left: 0;
-    height: 50vh;
+    height: 60vh;
     object-fit: cover;
 }
 

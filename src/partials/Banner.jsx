@@ -5,7 +5,9 @@ export default function Banner() {
   const nem = useRef()
   const o = useRef()
   const sa = useRef()
+  const nemosa = useRef()
   const subtitle = useRef()
+
   const sky = useRef()
   const sun = useRef()
   const mountainsBack = useRef()
@@ -16,10 +18,10 @@ export default function Banner() {
   const handleScroll = (event) => {
     const scrollY = window.scrollY
     nem.current.style.transform = `translate(${scrollY * -.1}px, 0)`
-    o.current.style.transform = `scale(${scrollY * .004 + 1})`
+    o.current.style.transform = `scale(${scrollY * .002 + 1})`
     sa.current.style.transform = `translate(${scrollY * .1}px, 0)`
-    
-    subtitle.current.style.transform = `translate(0, ${scrollY * .05}px)`
+    nemosa.current.style.transform = `translate(0, ${scrollY * .30}px)`
+    subtitle.current.style.transform = `translate(0, ${scrollY * .35}px)`
 
     sky.current.style.transform = `translate(0, ${scrollY * .25}px)`
     sun.current.style.transform = `translate(0, ${scrollY * .2}px)`
@@ -37,7 +39,7 @@ export default function Banner() {
     <>
       <section id="banner">
         <div className="top">
-          <ul>
+          <ul ref={nemosa}>
             <li ref={nem}><img src="img/logo/nem.svg" alt="" /></li>
             <li ref={o}><img src="img/logo/o.svg" alt="" /></li>
             <li ref={sa}><img src="img/logo/sa.svg" alt="" /></li>
