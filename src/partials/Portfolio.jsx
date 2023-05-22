@@ -28,17 +28,19 @@ export default function Portfolio() {
   
   return (
     <section id="portfolio">
-      <div className="header">
-        <h1>Dernières réalisations</h1>
-        <div className="instagram-logo"><i className="fa-brands fa-instagram"></i></div>
-      </div>
-      <div className="container">
-        {loading ? <Loading/> :
+      <div className="wrapper">
+        <div className="header">
+          <h1>Dernières réalisations</h1>
+          <div className="instagram-logo"><i className="fa-brands fa-instagram"></i></div>
+        </div>
+        <div className="container">
+          {loading ? <Loading/> :
 
-          <div className="slider">
-            <ImageSlider slides={posts}/>
-          </div>
-        }
+            <div className="slider">
+              <ImageSlider slides={posts}/>
+            </div>
+          }
+        </div>
       </div>
     </section>
   )

@@ -3,7 +3,9 @@ import React from 'react'
 export default function Contact() {
   return (
     <section id="contact">
-      <h1>Contact</h1>
+      <div className="wrapper">
+        <h1>Contact</h1>
+      </div>
     </section>
   )
 }

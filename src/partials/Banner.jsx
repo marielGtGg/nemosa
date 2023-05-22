@@ -46,14 +46,16 @@ export default function Banner() {
           </ul>
           <div ref={subtitle} className="subtitle">Travail du bois</div>
         </div>
-        <img ref={sky} src="img/banner/sky.png" alt="" />
-        <img ref={sun} src="img/banner/sun.png" alt="" />
-        <img ref={mountainsBack} src="img/banner/mountains-back.png" alt="" />
-        <img ref={mountainsFront} src="img/banner/mountains-front.png" alt="" />
-        <img ref={trees} src="img/banner/trees.png" alt="" />
-        <img ref={banks} src="img/banner/banks.png" alt="" />
+        <div className="bottom">
+          <img ref={sky} src="img/banner/sky.png" alt="" />
+          <img ref={sun} src="img/banner/sun.png" alt="" />
+          <img ref={mountainsBack} src="img/banner/mountains-back.png" alt="" />
+          <img ref={mountainsFront} src="img/banner/mountains-front.png" alt="" />
+          <img ref={trees} src="img/banner/trees.png" alt="" />
+          <img ref={banks} src="img/banner/banks.png" alt="" />
+        </div>
       </section>
-      <div id="nav-clearfix"></div>
+      {/* <div id="nav-clearfix"></div> */}
     </>
   )
 }

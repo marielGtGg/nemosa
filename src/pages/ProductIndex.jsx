@@ -29,13 +29,15 @@ export default function ProductIndex() {
   return (
     <section id="product-index">
       <h1>Boutique</h1>
-      {loading ? <Loading /> :
-        <div className="product-grid">
-          {products.map(product => {
-            return <ProductCard key={product.id} product={product} />
-          })} 
-        </div>
-      }
+      <div className="wrapper">
+        {loading ? <Loading /> :
+          <div className="product-grid">
+            {products.map(product => {
+              return <ProductCard key={product.id} product={product} />
+            })} 
+          </div>
+        }
+      </div>
     </section>
   )   
 }

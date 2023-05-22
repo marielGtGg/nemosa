@@ -49,7 +49,7 @@ html {
 
 body {
     min-height: 100vh;
-    /* background-color: var(--honeyDew); */
+    background-color: var(--paynesGray);
 }
 
 ul {
@@ -118,10 +118,6 @@ button, input[type="submit"], input[type="reset"] {
     text-align: center;
 }
 
-.lead {
-    font-size: larger;
-}
-
 /* UTILITIES */
 
 .item-qty-handler {
@@ -153,52 +149,6 @@ button, input[type="submit"], input[type="reset"] {
     right: .75rem;
 }
 
-/* PARALLAX */
-/* .wrapper {
-    position: relative;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    perspective: 100px;
-}
-
-.banner {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    transform-style: preserve-3d;
-    z-index: -1;
-}
-
-#growth-rings,
-#nemosa {
-    z-index: -1;
-}
-
-#growth-rings {
-    background-color: var(--honeyDew);
-    position: absolute;
-    height: 150%;
-    width: 100%;
-    object-fit: cover;
-    transform: translateZ(-100px) scale(2);
-}
-
-#nemosa, #o-inline {
-    position: absolute;
-    align-self: center;
-    width: 80vw;
-}
-
-#nemosa {
-    transform: translateZ(-25px) scale(1.25);
-}
-
-#o-inline {
-    transform: translateZ(-50px) scale(1.5);
-} */
-
 /* --- NAV --- */
 
 nav  {
@@ -217,7 +167,7 @@ nav .navbar {
     height: 3rem;
     background-color: var(--ashGray);
     border-bottom: solid 3px var(--paynesGray);
-    padding: .5rem 5vw;
+    padding: .5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -325,8 +275,17 @@ footer {
 }
 
 section {
-    min-height: 50vh;
-    padding: 10vmin 5vw;
+    /* min-height: 50vh; */
+    padding: 3rem 5vmin;
+}
+
+section .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1200px) {
+    
 }
 
 .cart-quantity {
@@ -341,10 +300,12 @@ section {
 
 #banner {
     padding: 0;
-    height: 100vh;
     position: relative;
     z-index: 4;
     background-color: var(--paynesGray);
+    min-height: 100vmax;
+    display: grid;
+    align-items: end;
     overflow: hidden;
     background-image: url(../../public/img/logo/growth_rings.svg);
     background-repeat: no-repeat;
@@ -354,7 +315,7 @@ section {
 }
 
 #banner .top {
-    height: 40vh;
+    height: 40vmax;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -364,6 +325,7 @@ section {
 
 #banner .top ul {
     width: 80vw;
+    max-width: 800px;
     display: flex;
     justify-content: center;
     align-items: end;
@@ -373,15 +335,20 @@ section {
     font-family: Kanit, sans-serif;
     color: var(--ashGray);
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: clamp(1.8rem, 8vw, 5rem);
     padding-top: .5rem;
 }
 
-#banner > img {
+#banner .bottom {
+    position: relative;
+    height: 115vw;
+    min-height: 500px;
+    width: 100%;
+}
+
+#banner .bottom img {
     position: absolute;
-    top: 40vh;
-    left: 0;
-    height: 60vh;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -391,23 +358,25 @@ section {
     background-color: var(--paynesGray);
     color: var(--babyPowder);
     overflow-x: hidden;
-    padding-top: 0;
+    padding: 3rem 0;
 }
 
 #about h1 {
     color: var(--babyPowder);
+    padding: 0 5vmin;
 }
 
 #about img {
     margin-left: 15vw;
     margin-bottom: 1rem;
-    height: 100vmin;
+    height: 100vw;
     width: 85vw;
     object-fit: cover;
     border-bottom-left-radius: .25rem;
 }
 
 #about .body {
+    padding: 0 5vmin;
     display: flex;
     flex-direction: column;
 }
@@ -439,6 +408,20 @@ section {
 
 #about .btn-more span.hidden {
     visibility: collapse;
+}
+
+@media screen and (min-width: 768px) {
+    #about img {
+        width: 40vw;
+        height: 40vw;
+        float: right;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    #about h1 {
+        padding-top: 2rem;
+    }
 }
 
 /* PRODUCT TEASER */
@@ -587,12 +570,13 @@ section {
 
 #product-index {
     padding: 0;
+    background-color: var(--babyPowder);
 }
 
 #product-index h1 {
     background-color: var(--paynesGray);
     color: var(--babyPowder);
-    padding: 0 5vw;
+    padding: 0 5vmin;
     font-size: 1.5rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -600,7 +584,7 @@ section {
 }
 
 #product-index .product-grid {
-    padding: 5vw;
+    padding: 5vmin;
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
@@ -682,6 +666,14 @@ section {
 
 /* PRODUCT-SINGLE */
 
+#product-single {
+    background-color: var(--babyPowder);
+}
+
+#product-single .card-img img {
+    border-radius: .25rem;
+}
+
 #product-single .card-body {
     padding: .75rem;
     text-align: start;
@@ -733,18 +725,19 @@ section {
 
 #cart {
     padding: 0 0 1rem;
+    background-color: var(--babyPowder);
 }
 
 #cart h1 {
     background-color: var(--thistle);
-    padding: 0 5vw;
+    padding: 0 5vmin;
     font-size: 1.5rem;
     font-weight: 500;
     text-transform: uppercase;
     margin: 0;
 }
 
-#cart .message {
+/* #cart .message {
     margin-top: 3rem;
     text-align: center;
 }
@@ -760,7 +753,7 @@ section {
 
 #cart .message button:hover a {
     color: var(--offWhite);
-}
+} */
 
 #cart .cart-item {
     display: flex;
@@ -829,46 +822,38 @@ section {
     font-weight: 700;
 }
 
-/* CHECKOUT-SUCCESS */
+/* CHECKOUT-SUCCESS */ /* NOT-FOUND */
 
-#checkout-success {
-    margin-top: 2rem;
+#checkout-success,
+#not-found,
+#cart .empty {
+    padding-top: 5rem;
     text-align: center;
+    background-color: var(--babyPowder);
 }
 
-#checkout-success p {
+#checkout-success p,
+#not-found p,
+#cart .empty p {
     font-size: 1.5rem;
     font-weight: 200;
 }
 
-#checkout-success p:last-of-type {
+#checkout-success p:last-of-type,
+#not-found p:last-of-type, 
+#cart .empty p:last-of-type {
     margin-top: 1rem;
+    font-size: 2rem;
 }
 
-#checkout-success button {
-    margin-top: 2rem;
+#checkout-success button,
+#not-found button, 
+#cart .empty button {
+    margin: 2rem 0;
 }
 
-#checkout-success button:hover a {
-    color: var(--offWhite);
-}
-
-/* NOT-FOUND */
-
-#not-found {
-    margin-top: 1rem;
-    text-align: center;
-}
-
-#not-found p {
-    font-size: 1.5rem;
-    font-weight: 200;
-}
-
-#not-found button {
-    margin-top: 3rem;
-}
-
-#not-found button:hover a {
+#checkout-success button:hover a,
+#not-found button:hover a,
+#cart .empty button:hover a {
     color: var(--offWhite);
 }

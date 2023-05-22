@@ -32,11 +32,13 @@ export default function ProductSingle() {
 
   return (
     <section id="product-single">
-      <h1>{product.name}</h1>
-      {loading ? <Loading/> :
-        <ProductCard key={product.id} product={product} noTitle={true} />
-      }
-      <div className="back"><i className="fa-solid fa-arrow-left-long"></i><Link to="/boutique">Boutique</Link></div>
+      <div className="wrapper">
+        <h1>{product.name}</h1>
+        {loading ? <Loading/> :
+          <ProductCard key={product.id} product={product} noTitle={true} />
+        }
+        <div className="back"><i className="fa-solid fa-arrow-left-long"></i><Link to="/boutique">Boutique</Link></div>
+      </div>
     </section>
   )   
 }

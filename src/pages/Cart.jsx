@@ -53,29 +53,32 @@ export default function Cart() {
   return (
     <section id="cart">
       <h1>Panier</h1>
-      {cartItems.length === 0 ? (
-          <div className="message">
-            <p className="lead">Votre panier est vide.</p>
-            <button className="btn-outline"><Link to="/boutique">Boutique</Link></button>
-          </div>
-      ) : (loading ? <Loading/> :
-          <>
-            <div className="cart-item-list">
-                {cartItems.map(item => <CartItem key={item.id} item={item} product={products.find(product => product.id === item.id)} />)} 
+      <div className="wrapper">
+        {cartItems.length === 0 ? (
+            <div className="empty">
+              <p>Votre panier est vide.</p>
+              <p><i className="fa-solid fa-cart-shopping"></i></p>
+              <button className="btn-outline"><Link to="/boutique">Boutique</Link></button>
             </div>
-            <div className="total">
-              <div>Total</div>
-              <div>
-                {formatPrice(cartItems.reduce((accumulator, item) => accumulator + item.quantity * products.find(product => product.id === item.id).price/100, 0))}
-              </div> 
-            </div>
-            <div className="actions">
-              <button className="btn-light" onClick={() => emptyCart()}>Vider</button>
-              <button className="btn-outline" onClick={handleCheckout}>Procéder au paiement</button>
-            </div>
-            <div className="back"><i className="fa-solid fa-arrow-left-long"></i><Link to="/boutique">Boutique</Link></div>
-          </>
-      )}
+        ) : (loading ? <Loading/> :
+            <>
+              <div className="cart-item-list">
+                  {cartItems.map(item => <CartItem key={item.id} item={item} product={products.find(product => product.id === item.id)} />)} 
+              </div>
+              <div className="total">
+                <div>Total</div>
+                <div>
+                  {formatPrice(cartItems.reduce((accumulator, item) => accumulator + item.quantity * products.find(product => product.id === item.id).price/100, 0))}
+                </div> 
+              </div>
+              <div className="actions">
+                <button className="btn-light" onClick={() => emptyCart()}>Vider</button>
+                <button className="btn-outline" onClick={handleCheckout}>Procéder au paiement</button>
+              </div>
+              <div className="back"><i className="fa-solid fa-arrow-left-long"></i><Link to="/boutique">Boutique</Link></div>
+            </>
+        )}
+      </div>
     </section>
   )
 }
