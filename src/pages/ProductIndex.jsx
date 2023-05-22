@@ -28,7 +28,9 @@ export default function ProductIndex() {
 
   return (
     <section id="product-index">
-      <h1>Boutique</h1>
+      <div className="header">
+        <div className="wrapper"><h1>Boutique</h1></div>
+      </div>
       <div className="wrapper">
         {loading ? <Loading /> :
           <div className="product-grid">

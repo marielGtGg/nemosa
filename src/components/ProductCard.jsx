@@ -1,6 +1,7 @@
 import { useCart } from '../contexts/CartContext'
 import ItemQtyHandler from '../utilities/ItemQtyHandler'
 import formatPrice from '../utilities/formatPrice'
+import { Link } from 'react-router-dom'
 
 export default function ProductCard({product, noTitle}) {
   const { 
@@ -33,7 +34,7 @@ export default function ProductCard({product, noTitle}) {
         <div className="card-title">
           {noTitle ? '' :
           <span className="name">
-            <a href={'/boutique/' + id}>{name}</a>
+            <Link to={'/boutique/' + id}>{name}</Link>
           </span>
           }
           <span className="price">{formatPrice(price, true)}</span>

@@ -52,7 +52,11 @@ export default function Cart() {
 
   return (
     <section id="cart">
-      <h1>Panier</h1>
+      <div className="header">
+        <div className="wrapper">
+          <h1>Panier</h1>
+        </div>
+      </div>
       <div className="wrapper">
         {cartItems.length === 0 ? (
             <div className="empty">
@@ -72,10 +76,10 @@ export default function Cart() {
                 </div> 
               </div>
               <div className="actions">
-                <button className="btn-light" onClick={() => emptyCart()}>Vider</button>
+                <button className="btn-outline btn-light" onClick={() => emptyCart()}><i className="fa-solid fa-trash-can"></i>Vider</button>
                 <button className="btn-outline" onClick={handleCheckout}>Procéder au paiement</button>
               </div>
-              <div className="back"><i className="fa-solid fa-arrow-left-long"></i><Link to="/boutique">Boutique</Link></div>
+              <div className="back"><Link to="/boutique"><i className="fa-solid fa-arrow-left-long"></i>Boutique</Link></div>
             </>
         )}
       </div>
