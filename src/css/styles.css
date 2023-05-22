@@ -447,15 +447,15 @@ section .wrapper {
 
 #product-teaser h2 {
     font-family: Kanit, sans-serif;
-    text-align: end;
-    margin-bottom: 1.5rem;
-    font-weight: 400;
-    font-size: 2rem;
+    text-align: start;
+    margin: 2rem 0;
+    font-weight: 300;
+    font-size: 2.5rem;
     line-height: 2.1rem;
 }
 
 #product-teaser .products figure {
-    width: 60vmin;
+    width: 60vw;
     margin-bottom: 1rem;
 }
 
@@ -464,7 +464,6 @@ section .wrapper {
     object-fit: cover;
     aspect-ratio: 1 / 1;
     border-radius: .25rem;
-    /* transition: all .25s ease-out; */
 }
 
 #product-teaser .products figcaption {
@@ -486,7 +485,22 @@ section .wrapper {
     text-align: end;
 }
 
+@media screen and (min-width: 768px) {
+    #product-teaser .products {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+    }
 
+    #product-teaser #teaser2 {
+        margin-left: 0;
+    }
+
+    #product-teaser #teaser2 figcaption {
+        margin-top: 1rem;
+    }
+
+}
 
 /* PORTFOLIO */
 
@@ -495,13 +509,8 @@ section .wrapper {
     color: var(--babyPowder);
 }
 
-#portfolio .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-}
-
 #portfolio h1 {
+    margin-top: 2rem;
     color: var(--babyPowder);
     line-height: 2.8rem;
 }
@@ -512,14 +521,27 @@ section .wrapper {
     margin-bottom: .5rem;
 }
 
+#portfolio .instagram-logo a {
+    color: var(--babyPowder);
+}
+
+#portfolio .slider-container {
+    max-width: calc(100vmin - 5rem);
+    margin: 0 auto;
+}
+
 #portfolio .slider {
-    height: 90vmin;
+    height: calc(100vmin - 5rem);
 }
 
 /* SERVICES */
 
 #services {
     background-color: var(--honeyDew);
+}
+
+#services h1 {
+    margin-top: 2rem;
 }
 
 #services .collapsible {
@@ -736,24 +758,6 @@ section .wrapper {
     text-transform: uppercase;
     margin: 0;
 }
-
-/* #cart .message {
-    margin-top: 3rem;
-    text-align: center;
-}
-
-#cart .message p {
-    font-size: 1.5rem;
-    font-weight: 200;
-}
-
-#cart .message button {
-    margin-top: 2rem;
-}
-
-#cart .message button:hover a {
-    color: var(--offWhite);
-} */
 
 #cart .cart-item {
     display: flex;

@@ -34,34 +34,34 @@ export default function ProductTeaser() {
         {loading ? <Loading /> : 
 
           <div className="products">
-            <HashLink to={'/boutique#' + products.teaser1.id}>
-              <figure id="teaser1">
+            <figure id="teaser1">
+              <HashLink to={'/boutique#' + products.teaser1.id}>
                 <img src={products.teaser1.img} alt={products.teaser1.name} />
                 <figcaption>
                   {products.teaser1.name}
                 </figcaption>
-              </figure>
-            </HashLink>
-            <HashLink to={'/boutique#' + products.teaser2.id}>
-              <figure id="teaser2">
+              </HashLink>
+            </figure>
+            <figure id="teaser2">
+              <HashLink to={'/boutique#' + products.teaser2.id}>
                 <figcaption>
                   {products.teaser2.name}
                 </figcaption>
                 <img src={products.teaser2.img} alt={products.teaser2.name} />
-              </figure>
-            </HashLink>
-            <HashLink to={'/boutique#' + products.teaser3.id}>
-              <figure id="teaser3">
+              </HashLink>
+            </figure>
+            <figure id="teaser3">
+              <HashLink to={'/boutique#' + products.teaser3.id}>
                 <img src={products.teaser3.img} alt={products.teaser3.name} />
                 <figcaption>
                   {products.teaser3.name}
                 </figcaption>
-              </figure>
-            </HashLink>
+              </HashLink>
+            </figure>
           </div>
 
         }
-        <Link to="/boutique"><h1>Voir les produits<i className="fa-solid fa-arrow-right-long"></i></h1></Link>
+        <Link to="/boutique"><h1>Tous les produits<i className="fa-solid fa-arrow-right-long"></i></h1></Link>
       </div>
     </section>
   )
