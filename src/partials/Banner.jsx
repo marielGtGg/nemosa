@@ -13,9 +13,8 @@ export default function Banner() {
   const mountainsBack = useRef()
   const mountainsFront = useRef()
   const trees = useRef()
-  const banks = useRef()
 
-  const handleScroll = (event) => {
+  const handleScroll = () => {
     const scrollY = window.scrollY
     nem.current.style.transform = `translate(${scrollY * -.1}px, 0)`
     o.current.style.transform = `scale(${scrollY * .002 + 1})`
@@ -28,7 +27,6 @@ export default function Banner() {
     mountainsBack.current.style.transform = `translate(0, ${scrollY * .15}px)`
     mountainsFront.current.style.transform = `translate(0, ${scrollY * .1}px)`
     trees.current.style.transform = `translate(0, ${scrollY * .05}px)`
-    // banks.current.style.transform = `translate(0, ${scrollY * .1}pxpx)`
   }
 
   useEffect(() => {   
@@ -52,7 +50,7 @@ export default function Banner() {
           <img ref={mountainsBack} src="img/banner/mountains-back.png" alt="" />
           <img ref={mountainsFront} src="img/banner/mountains-front.png" alt="" />
           <img ref={trees} src="img/banner/trees.png" alt="" />
-          <img ref={banks} src="img/banner/banks.png" alt="" />
+          <img src="img/banner/banks.png" alt="" />
         </div>
       </section>
       {/* <div id="nav-clearfix"></div> */}

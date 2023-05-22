@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
-import ImageSlider from '../utilities/ImageSlider'
+import ImageSlider from '../components/ImageSlider'
 import Loading from '../components/Loading'
+import SlidingHeader from '../components/SlidingHeader'
 
 export default function Portfolio() {
 
@@ -29,7 +30,7 @@ export default function Portfolio() {
   return (
     <section id="portfolio">
       <div className="wrapper">
-        <h1>Dernières réalisations</h1>
+        <SlidingHeader key="productTeaser" name="Dernières réalisations" toRight={false} />
         {loading ? <Loading/> :
 
           <div className="slider-container">

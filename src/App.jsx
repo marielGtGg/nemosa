@@ -24,10 +24,8 @@ export default function App() {
   return (
     <CartProvider>
       <header>
-        {/* <Navbar mainTop={mainTop} /> */}
         <Navbar />
       </header>
-      {/* <div className="wrapper" onScroll={handleScroll}> */}
         <main className="main-container" ref={main}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -43,7 +41,6 @@ export default function App() {
         <footer>
           <Contact />
         </footer>
-      {/* </div> */}
     </CartProvider>
   );
 }

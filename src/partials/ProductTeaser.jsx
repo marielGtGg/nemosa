@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 import Loading from '../components/Loading'
+import SlidingHeader from '../components/SlidingHeader'
 
 export default function ProductTeaser() {
 
@@ -30,7 +31,7 @@ export default function ProductTeaser() {
   return (
     <section id="product-teaser">
       <div className="wrapper">
-        <h2>Objets en bois & projets sur mesure</h2>
+        <SlidingHeader key="productTeaser" name="Objets en bois & projets sur mesure" toRight={true} />
         {loading ? <Loading /> : 
 
           <div className="products">
@@ -61,7 +62,7 @@ export default function ProductTeaser() {
           </div>
 
         }
-        <Link to="/boutique"><h1>Tous les produits<i className="fa-solid fa-arrow-right-long"></i></h1></Link>
+        <Link to="/boutique"><h2>Tous les produits<i className="fa-solid fa-arrow-right-long"></i></h2></Link>
       </div>
     </section>
   )
