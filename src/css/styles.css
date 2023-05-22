@@ -264,10 +264,6 @@ nav a {
   
 nav li:hover {
     border-bottom: solid 3px var(--paynesGray);
-} 
-  
-.main-container {
-    position: relative;
 }
 
 footer {
@@ -307,7 +303,7 @@ section .wrapper {
     display: grid;
     align-items: end;
     overflow: hidden;
-    background-image: url(../../public/img/logo/growth_rings.svg);
+    background-image: url(../../img/logo/growth_rings.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -515,14 +511,21 @@ section .wrapper {
     line-height: 2.8rem;
 }
 
-#portfolio .instagram-logo {
-    font-size: 1.5rem;
+#portfolio .instagram {
     text-align: right;
     margin-bottom: .5rem;
 }
 
-#portfolio .instagram-logo a {
+#portfolio .instagram a {
     color: var(--babyPowder);
+}
+
+#portfolio .instagram a:hover {
+    color: var(--brownSugar);
+}
+
+#portfolio .instagram .fa-instagram {
+    font-size: 1.5rem;
 }
 
 #portfolio .slider-container {
@@ -587,6 +590,35 @@ section .wrapper {
 #contact h1 {
     color: var(--babyPowder);
 }
+
+#contact .contact div {
+    margin-bottom: .5rem;
+}
+
+#contact .contact a {
+    color: var(--babyPowder);
+}
+
+#contact .contact a:hover {
+    color: var(--brownSugar);
+}
+
+#contact .separator {
+    display: none;
+}
+
+@media screen and (min-width: 576px) {
+    #contact .contact {
+        display: flex;
+        justify-content: center
+    }
+
+    #contact .separator {
+        padding: 0 1rem;
+        display: block;
+    }
+}
+
 
 /* PRODUCT INDEX */
 

@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react'
 import ImageSlider from '../utilities/ImageSlider'
 import Loading from '../components/Loading'
-import { Link } from 'react-router-dom'
 
 export default function Portfolio() {
 
@@ -34,8 +33,8 @@ export default function Portfolio() {
         {loading ? <Loading/> :
 
           <div className="slider-container">
-            <div className="instagram-logo">
-              <Link to="https://www.instagram.com/atelier.nemosa/" target="_blank"><i className="fa-brands fa-instagram"></i></Link>
+            <div className="instagram">
+              <a href="https://www.instagram.com/atelier.nemosa/" target="_blank">@atelier.nemosa<i className="fa-brands fa-instagram"></i></a>
             </div>
             <div className="slider">
               <ImageSlider slides={posts}/>
