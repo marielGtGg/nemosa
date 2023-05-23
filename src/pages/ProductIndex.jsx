@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import ProductCard from '../components/ProductCard'
 import Loading from '../components/Loading'
+import productAll from '../services/productAll'
 
 export default function ProductIndex() {
 
@@ -8,13 +9,7 @@ export default function ProductIndex() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost/nemosa-api/index.php?q=product.all')
-    .then((response) => {
-      if (response.ok) {
-        return response.json()
-      }
-      throw response
-    })
+    productAll()
     .then((data) => {
       setProducts(data)
     })

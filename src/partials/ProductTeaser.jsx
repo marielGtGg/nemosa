@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 import Loading from '../components/Loading'
 import SlidingHeader from '../components/SlidingHeader'
+import productTeaser from '../services/productTeaser'
 
 export default function ProductTeaser() {
 
@@ -10,13 +11,7 @@ export default function ProductTeaser() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost/nemosa-api/index.php?q=product.teaser')
-    .then((response) => {
-      if (response.ok) {
-        return response.json()
-      }
-      throw response
-    })
+    productTeaser()
     .then((data) => {
       setProducts(data)
     })
@@ -31,7 +26,7 @@ export default function ProductTeaser() {
   return (
     <section id="product-teaser">
       <div className="wrapper">
-        <SlidingHeader key="productTeaser" name="Objets en bois & projets sur mesure" toRight={true} />
+        {/* <SlidingHeader key="productTeaser" name="Objets en bois & projets sur mesure" toRight={true} /> */}
         {loading ? <Loading /> : 
 
           <div className="products">

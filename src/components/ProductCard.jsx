@@ -1,5 +1,5 @@
 import { useCart } from '../contexts/CartContext'
-import ItemQtyHandler from '../utilities/ItemQtyHandler'
+import ItemQtyHandler from './ItemQtyHandler'
 import formatPrice from '../utilities/formatPrice'
 import { Link } from 'react-router-dom'
 

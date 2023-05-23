@@ -26,7 +26,7 @@ html {
     font-family: 'DM Sans', sans-serif;
     color: var(--paynesGray);
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
+    /* scroll-snap-type: y proximity; */
 }
 
 body {
@@ -36,7 +36,7 @@ body {
 
 section {
     padding: 3rem 5vmin;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
 }
 
 section .wrapper {
@@ -604,6 +604,7 @@ nav li:hover {
 
 #contact .contact a {
     color: var(--babyPowder);
+    font-weight: 300;
 }
 
 #contact .contact a:hover {
@@ -723,6 +724,7 @@ nav li:hover {
 
 #product-single {
     background-color: var(--babyPowder);
+    padding-top: 1rem;
 }
 
 #product-single .card-img img {
@@ -914,8 +916,14 @@ nav li:hover {
     margin: 2rem 0;
 }
 
+#checkout-success button a,
+#not-found button a, 
+#cart .empty button a {
+    color: var(--brownSugar);
+}
+
 #checkout-success button:hover a,
 #not-found button:hover a,
 #cart .empty button:hover a {
-    color: var(--offWhite);
+    color: var(--babyPowder);
 }

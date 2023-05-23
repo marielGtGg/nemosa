@@ -5,6 +5,7 @@ import { HashLink } from 'react-router-hash-link'
 
 
 export default function Navbar({mainTop} = null) {
+
   const [active, setActive] = useState(false)
   
   const handleClick = () => {
@@ -14,16 +15,9 @@ export default function Navbar({mainTop} = null) {
   const {
     cartQuantity
   } = useCart()
-
-  // const [show, setShow] = useState(false)
-  
-  // useEffect(() => {
-  //   setShow(mainTop <= 100)
-  // }, [mainTop])
   
   return (
     <>
-      {/* <nav style={{height: (active ? '100vh' : 'auto'), top: (show ? 0 : '-3rem')}}> */}
       <nav onClick={() => {active && handleClick()}} style={{height: (active ? '100vh' : 'auto')}}>
         <div className="navbar">
           <button className={'hamburger ' + (active ? 'active' : '')} onClick={handleClick}>

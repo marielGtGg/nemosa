@@ -1,5 +1,5 @@
 import formatPrice from '../utilities/formatPrice'
-import ItemQtyHandler from '../utilities/ItemQtyHandler'
+import ItemQtyHandler from './ItemQtyHandler'
 import { Link } from 'react-router-dom'
 
 export default function CartItem({item, product}) {

@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import ImageSlider from '../components/ImageSlider'
 import Loading from '../components/Loading'
 import SlidingHeader from '../components/SlidingHeader'
+import instagramPosts from '../services/instagramPosts'
 
 export default function Portfolio() {
 
@@ -9,13 +10,7 @@ export default function Portfolio() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=' + import.meta.env.VITE_INSTAGRAM_KEY)
-    .then((response) => {
-      if (response.ok) {
-        return response.json()
-      }
-      throw response
-    })
+    instagramPosts()
     .then((data) => {
       setPosts(data.data.slice(0, 10))
     })
@@ -30,7 +25,7 @@ export default function Portfolio() {
   return (
     <section id="portfolio">
       <div className="wrapper">
-        <SlidingHeader key="productTeaser" name="Dernières réalisations" toRight={false} />
+        {/* <SlidingHeader key="productTeaser" name="Dernières réalisations" toRight={false} /> */}
         {loading ? <Loading/> :
 
           <div className="slider-container">

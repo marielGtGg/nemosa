@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import Loading from '../components/Loading'
 import ProductCard from '../components/ProductCard'
 import { Link } from 'react-router-dom'
+import productFind from '../services/productFind'
 
 export default function ProductSingle() {
   const { id } = useParams()
@@ -11,19 +12,12 @@ export default function ProductSingle() {
   const [loading, setLoading] = useState(true)
   
   useEffect(() => {
-    fetch('http://localhost/nemosa-api/index.php?q=product.find&id=' + id)
-    .then((response) => {
-      if (response.ok) {
-        return response.json()
-      }
-      throw response
-    })
+    productFind(id)
     .then((data) => {
       setProduct(data)
     })
     .catch(error => {
       console.error('error : ' + error)
-      setError(error)
     })
     .finally(() => {
       setLoading(false)

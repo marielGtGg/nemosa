@@ -6,8 +6,7 @@ export default function ItemQtyHandler({id}) {
   const {
     getItemQuantity, 
     increaseItemQuantity, 
-    decreaseItemQuantity,
-    removefromCart
+    decreaseItemQuantity
   } = useCart()
 
   const quantity = getItemQuantity(id)
@@ -19,7 +18,6 @@ export default function ItemQtyHandler({id}) {
         <div className="qty"><span>{quantity}</span></div>
         <button onClick={() => increaseItemQuantity(id)}><i className="fa-solid fa-plus"></i></button>
       </div>
-      {/* <button className="remove" onClick={() => removefromCart(id)}><i className="fa-solid fa-xmark"></i></button> */}
     </div>
   )
 }
