@@ -1,59 +1,81 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef } from 'react'
+import { motion, useScroll, useTransform } from "framer-motion"
 
 export default function Banner() {
+  console.log('banner')
 
-  const nem = useRef()
-  const o = useRef()
-  const sa = useRef()
-  const nemosa = useRef()
-  const subtitle = useRef()
-
-  const sky = useRef()
-  const sun = useRef()
-  const mountainsBack = useRef()
-  const mountainsFront = useRef()
-  const trees = useRef()
-
-  const handleScroll = () => {
-    const scrollY = window.scrollY
-    nem.current.style.transform = `translate(${scrollY * -.1}px, 0)`
-    o.current.style.transform = `scale(${scrollY * .002 + 1})`
-    sa.current.style.transform = `translate(${scrollY * .1}px, 0)`
-    nemosa.current.style.transform = `translate(0, ${scrollY * .30}px)`
-    subtitle.current.style.transform = `translate(0, ${scrollY * .35}px)`
-
-    sky.current.style.transform = `translate(0, ${scrollY * .25}px)`
-    sun.current.style.transform = `translate(0, ${scrollY * .2}px)`
-    mountainsBack.current.style.transform = `translate(0, ${scrollY * .15}px)`
-    mountainsFront.current.style.transform = `translate(0, ${scrollY * .1}px)`
-    trees.current.style.transform = `translate(0, ${scrollY * .05}px)`
-  }
-
-  useEffect(() => {   
-    window.addEventListener('scroll', handleScroll)
-  }, [])
+  const banner = useRef()
+  
+  const { scrollYProgress } = useScroll({
+    target: banner,
+    offset: ['start start', 'end start']
+  })
 
   return (
-    <>
-      <section id="banner">
-        <div className="top">
-          <ul ref={nemosa}>
-            <li ref={nem}><img src="img/logo/nem.svg" alt="" /></li>
-            <li ref={o}><img src="img/logo/o.svg" alt="" /></li>
-            <li ref={sa}><img src="img/logo/sa.svg" alt="" /></li>
-          </ul>
-          <div ref={subtitle} className="subtitle">Travail du bois</div>
-        </div>
-        <div className="bottom">
-          <img ref={sky} src="img/banner/sky.png" alt="" />
-          <img ref={sun} src="img/banner/sun.png" alt="" />
-          <img ref={mountainsBack} src="img/banner/mountains-back.png" alt="" />
-          <img ref={mountainsFront} src="img/banner/mountains-front.png" alt="" />
-          <img ref={trees} src="img/banner/trees.png" alt="" />
-          <img src="img/banner/banks.png" alt="" />
-        </div>
-      </section>
-      {/* <div id="nav-clearfix"></div> */}
-    </>
+    <section ref={banner} id="banner">
+
+      <motion.div 
+        id="banner-nemosa"
+        style={{ y: useTransform(scrollYProgress, [0, 1], ['0','70vw']) }}
+      >
+
+        <motion.div style={{ x: useTransform(scrollYProgress, [0, 1], ['0', '-10vw']) }}>
+          <img src="img/logo/nem.svg" alt="" />
+        </motion.div>
+
+        <motion.div style={{ scale: useTransform(scrollYProgress, [0, 1], ['1', '2.5']) }}>
+          <img src="img/logo/o.svg" alt="" />
+        </motion.div>
+
+        <motion.div style={{ x: useTransform(scrollYProgress, [0, 1], ['0', '10vw']) }}>
+          <img src="img/logo/sa.svg" alt="" />
+        </motion.div>
+
+      </motion.div>   
+
+      <motion.div 
+        id="banner-subtitle" 
+        style={{ y: useTransform(scrollYProgress, [0, 1], ['0','70vw']) }}
+      >
+        Travail du bois
+      </motion.div>
+
+      <motion.div 
+        className="banner-landscape" 
+        style={{ 
+          y: useTransform(scrollYProgress, [0, 1], ['0','40vw']), 
+          x: useTransform(scrollYProgress, [0, 1], ['0','5vw']),
+          scale: useTransform(scrollYProgress, [0, 1], ['1', '.8'])
+        }}
+      >
+        <img src="img/banner/sun.png" alt="" />
+      </motion.div>
+
+      <motion.div
+        className="banner-landscape" 
+        style={{ y: useTransform(scrollYProgress, [0, 1], ['0','30vw']) }}
+      >
+        <img src="img/banner/mountains-back.png" alt="" />
+      </motion.div>
+
+      <motion.div 
+        className="banner-landscape"
+        style={{ y: useTransform(scrollYProgress, [0, 1], ['0','20vw']) }}
+      >
+        <img src="img/banner/mountains-front.png" alt="" />
+      </motion.div>
+
+      <motion.div
+        className="banner-landscape" 
+        style={{ y: useTransform(scrollYProgress, [0, 1], ['0','10vw']) }}
+      >
+        <img src="img/banner/trees.png" alt="" />
+      </motion.div>
+
+      <div className="banner-landscape">
+        <img src="img/banner/banks.png" alt="" />
+      </div>
+
+    </section>
   )
 }

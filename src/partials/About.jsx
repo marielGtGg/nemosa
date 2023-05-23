@@ -14,6 +14,7 @@ export default function About() {
       <div className="wrapper">
         <img src="img/antoine2.jpg" alt="Antoine Gauthier-Grégoire" />
         {/* <SlidingHeader name="Je suis ébéniste" toRight={false}/> */}
+        <h1>Je suis ébéniste</h1>
         <div className="body">
           <p className="lead">Maniant la chainsaw et le rabot, je révèle la beauté de nos forêts.</p>
           <div className={'more ' + (shown ? '' : 'hidden')}>

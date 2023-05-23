@@ -26,7 +26,7 @@ html {
     font-family: 'DM Sans', sans-serif;
     color: var(--paynesGray);
     scroll-behavior: smooth;
-    /* scroll-snap-type: y proximity; */
+    scroll-snap-type: y proximity;
 }
 
 body {
@@ -36,7 +36,7 @@ body {
 
 section {
     padding: 3rem 5vmin;
-    /* scroll-snap-align: start; */
+    scroll-snap-align: start;
 }
 
 section .wrapper {
@@ -305,8 +305,6 @@ nav li:hover {
     z-index: 4;
     background-color: var(--paynesGray);
     min-height: 100vmax;
-    display: grid;
-    align-items: end;
     overflow: hidden;
     background-image: url(../../img/logo/growth_rings.svg);
     background-repeat: no-repeat;
@@ -315,24 +313,25 @@ nav li:hover {
     margin-top: -3rem;
 }
 
-#banner .top {
-    height: 40vmax;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
-    padding-bottom: 3rem;
-}
-
-#banner .top ul {
-    width: 80vw;
-    max-width: 800px;
+#banner-nemosa {
+    position: absolute;
+    height: 30vmax;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: end;
+    padding: 0 10vw;
 }
 
-#banner .top .subtitle {
+#banner-subtitle {
+    position: absolute;
+    height: 10vmax;
+    top: 30vmax;
+    left: 0;
+    right: 0;
+    text-align: center;
     font-family: Kanit, sans-serif;
     color: var(--ashGray);
     text-transform: uppercase;
@@ -340,15 +339,16 @@ nav li:hover {
     padding-top: .5rem;
 }
 
-#banner .bottom {
-    position: relative;
+#banner .banner-landscape {
+    position: absolute;
     height: 115vw;
     min-height: 500px;
-    width: 100%;
+    top: 40vmax;
+    left: 0;
+    right: 0;
 }
 
-#banner .bottom img {
-    position: absolute;
+#banner .banner-landscape img {
     height: 100%;
     object-fit: cover;
 }
@@ -630,7 +630,7 @@ nav li:hover {
 /* PRODUCT INDEX */
 
 #product-index {
-    padding: 0;
+    padding: 3rem 0 0;
     background-color: var(--babyPowder);
 }
 
@@ -724,7 +724,6 @@ nav li:hover {
 
 #product-single {
     background-color: var(--babyPowder);
-    padding-top: 1rem;
 }
 
 #product-single .card-img img {
@@ -806,7 +805,7 @@ nav li:hover {
 /* CART */
 
 #cart {
-    padding: 0 0 2rem;
+    padding: 3rem 0 2rem;
     background-color: var(--babyPowder);
 }
 

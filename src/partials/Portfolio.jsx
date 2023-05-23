@@ -26,6 +26,7 @@ export default function Portfolio() {
     <section id="portfolio">
       <div className="wrapper">
         {/* <SlidingHeader key="productTeaser" name="Dernières réalisations" toRight={false} /> */}
+        <h1>Dernières réalisations</h1>
         {loading ? <Loading/> :
 
           <div className="slider-container">

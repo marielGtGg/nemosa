@@ -9,6 +9,7 @@ export default function Services() {
     <section id="services">
       <div className="wrapper">
         {/* <SlidingHeader key="productTeaser" name="Services" toRight={true} /> */}
+        <h1>Services</h1>
         <div className="services-list">
           {services.map((service, index) => <Collapsible key={index} data={service}/>)}
         </div>

@@ -27,6 +27,7 @@ export default function ProductTeaser() {
     <section id="product-teaser">
       <div className="wrapper">
         {/* <SlidingHeader key="productTeaser" name="Objets en bois & projets sur mesure" toRight={true} /> */}
+        <h1>Objets en bois & projets sur mesure</h1>
         {loading ? <Loading /> : 
 
           <div className="products">
