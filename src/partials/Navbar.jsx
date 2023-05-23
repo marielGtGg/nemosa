@@ -26,7 +26,7 @@ export default function Navbar({mainTop} = null) {
             <span></span>
           </button>
           <HashLink to="/#about">
-            <img src="/img/logo/nemosa_text_gray_orange.svg" alt="NEMOSA" />
+            <img src="/img/logo/nemosa.svg" alt="NEMOSA" />
           </HashLink>
           <Link to="/panier">
             <div className="cart">

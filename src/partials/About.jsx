@@ -12,7 +12,7 @@ export default function About() {
   return (
     <section id="about">
       <div className="wrapper">
-        <img src="img/antoine2.jpg" alt="Antoine Gauthier-Grégoire" />
+        <img src="img/antoine.jpg" alt="Antoine Gauthier-Grégoire" />
         {/* <SlidingHeader name="Je suis ébéniste" toRight={false}/> */}
         <h1>Je suis ébéniste</h1>
         <div className="body">

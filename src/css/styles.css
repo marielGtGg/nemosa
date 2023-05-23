@@ -1,16 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* --- General --- */
+/* --- GENERAL --- */
 
 :root {
-    --white: white;
     --ashGray: #b8cbb1;
     --honeyDew: #DEE7DA;
     --babyPowder: #F4F7F3;
     --paynesGray: #4F6D7A;
     --brownSugar: #CB7C55;
-    --redWood: #916150;
     --thistle: #CEC4D4;
     --ashGrayRGB: 184, 203, 177;
 
@@ -117,8 +115,7 @@ button, input[type="submit"], input[type="reset"] {
 .btn-outline:hover,
 .btn-outilne:focus {
     background-color: var(--brownSugar);
-    color: var(--offWhite);
-    /* border-color: var(--paynesGray); */
+    color: var(--babyPowder);
 }
   
 .btn-light {
@@ -169,7 +166,7 @@ button, input[type="submit"], input[type="reset"] {
     right: .75rem;
 }
 
-/* --- NAV --- */
+/* NAV */
 
 nav  {
     position: fixed;
@@ -252,7 +249,6 @@ nav .hamburger.active span:nth-child(3) {
 }
 
 nav .menu {
-    /* flex-grow: 1; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -569,7 +565,6 @@ nav li:hover {
 }
 
 #services .content {
-    /* padding-top: .5rem; */
     overflow: hidden;
     max-height: 500px;
     transition: all .5s ease-out;
@@ -884,7 +879,7 @@ nav li:hover {
     padding: .75rem 5vmin;
 }
 
-/* CHECKOUT-SUCCESS */ /* NOT-FOUND */
+/* CHECKOUT-SUCCESS */ /* NOT-FOUND */ /* CART EMPTY */
 
 #checkout-success,
 #not-found,
