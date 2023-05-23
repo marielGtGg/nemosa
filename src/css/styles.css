@@ -25,6 +25,7 @@ html {
     color: var(--paynesGray);
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;
+    scroll-padding-top: 3rem;
 }
 
 body {
@@ -33,7 +34,7 @@ body {
 }
 
 section {
-    padding: 3rem 5vmin;
+    padding: 2rem 5vmin 3rem;
     scroll-snap-align: start;
 }
 
@@ -298,7 +299,7 @@ nav li:hover {
 #banner {
     padding: 0;
     position: relative;
-    z-index: 4;
+    z-index: 3;
     background-color: var(--paynesGray);
     min-height: 100vmax;
     overflow: hidden;
@@ -307,26 +308,28 @@ nav li:hover {
     background-size: cover;
     background-position: center;
     margin-top: -3rem;
+    margin-bottom: 3rem;
+}
+
+#banner .title {
+    height: 40vmax;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 0 10vw 3rem;
 }
 
 #banner-nemosa {
-    position: absolute;
-    height: 30vmax;
-    top: 0;
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: center;
     align-items: end;
-    padding: 0 10vw;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #banner-subtitle {
-    position: absolute;
-    height: 10vmax;
-    top: 30vmax;
-    left: 0;
-    right: 0;
     text-align: center;
     font-family: Kanit, sans-serif;
     color: var(--ashGray);
@@ -336,17 +339,40 @@ nav li:hover {
 }
 
 #banner .banner-landscape {
-    position: absolute;
+    position: relative;
+    z-index: 4;
     height: 115vw;
     min-height: 500px;
-    top: 40vmax;
+}
+
+#banner .banner-landscape > div {
+    position: absolute;
+    top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
 }
 
 #banner .banner-landscape img {
     height: 100%;
     object-fit: cover;
+}
+
+@media screen and (min-width: 992px) {
+    #banner .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    #banner .banner-landscape {
+        height: 110vw;
+    }
+
+    #banner .banner-landscape img {
+        object-position: bottom;
+    }
 }
 
 /* ABOUT */
@@ -355,7 +381,7 @@ nav li:hover {
     background-color: var(--paynesGray);
     color: var(--babyPowder);
     overflow-x: hidden;
-    padding: 3rem 0;
+    padding: 0 0 3rem;
 }
 
 #about h1 {
@@ -428,8 +454,8 @@ nav li:hover {
 }
 
 #product-teaser h1 {
+    margin-bottom: 2rem;
     text-align: start;
-    margin: 2rem 0;
     font-size: 2.5rem;
     line-height: 2.1rem;
 }
@@ -507,7 +533,6 @@ nav li:hover {
 }
 
 #portfolio h1 {
-    margin-top: 2rem;
     color: var(--babyPowder);
     line-height: 2.8rem;
 }
@@ -531,22 +556,20 @@ nav li:hover {
 }
 
 #portfolio .slider-container {
-    max-width: calc(100vmin - 5rem);
+    width: calc(100vmin - 5rem);
+    max-width: 540px;
     margin: 0 auto;
 }
 
 #portfolio .slider {
     height: calc(100vmin - 5rem);
+    max-height: 540px;
 }
 
 /* SERVICES */
 
 #services {
     background-color: var(--honeyDew);
-}
-
-#services h1 {
-    margin-top: 2rem;
 }
 
 #services .collapsible {
@@ -625,7 +648,7 @@ nav li:hover {
 /* PRODUCT INDEX */
 
 #product-index {
-    padding: 3rem 0 0;
+    padding: 0;
     background-color: var(--babyPowder);
 }
 
@@ -719,6 +742,7 @@ nav li:hover {
 
 #product-single {
     background-color: var(--babyPowder);
+    padding-top: 1rem;
 }
 
 #product-single .card-img img {
@@ -800,8 +824,9 @@ nav li:hover {
 /* CART */
 
 #cart {
-    padding: 3rem 0 2rem;
+    padding: 0 0 2rem;
     background-color: var(--babyPowder);
+    min-height: 60vh;
 }
 
 #cart .header {
@@ -887,6 +912,10 @@ nav li:hover {
     padding-top: 5rem;
     text-align: center;
     background-color: var(--babyPowder);
+}
+
+#checkout-success,
+#not-found {
     min-height: 60vh;
 }
 
