@@ -42,8 +42,16 @@ export default function Banner() {
         </motion.div>
       </div>
  
-    <div className="banner-landscape">
-      <motion.div 
+      <div className="banner-landscape">
+
+        <motion.div
+          className="sky"
+          style={{ y: useTransform(scrollYProgress, [0, 1], ['0','40vw']) }}
+        >
+          <img src="img/banner/sky.png" alt="" />
+        </motion.div>
+
+        <motion.div 
           style={{ 
             y: useTransform(scrollYProgress, [0, 1], ['0','40vw']), 
             x: useTransform(scrollYProgress, [0, 1], ['0','5vw']),
@@ -74,7 +82,6 @@ export default function Banner() {
         <div>
           <img src="img/banner/banks.png" alt="" />
         </div>
-
 
       </div>
     </section>

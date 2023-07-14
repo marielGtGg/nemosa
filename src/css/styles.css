@@ -334,7 +334,7 @@ nav li:hover {
     font-family: Kanit, sans-serif;
     color: var(--ashGray);
     text-transform: uppercase;
-    font-size: clamp(1.8rem, 8vw, 5rem);
+    font-size: clamp(1.8rem, 8vw, 4rem);
     padding-top: .5rem;
 }
 
@@ -358,20 +358,58 @@ nav li:hover {
     object-fit: cover;
 }
 
+#banner .banner-landscape .sky {
+    opacity: 0;
+}
+
 @media screen and (min-width: 992px) {
+    #banner {
+        height: 115vh;
+        min-height: initial;
+    }
+    
     #banner .title {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
+        height: auto;
+        padding-top: 30vh;
+    }
+
+    #banner-nemosa {
+        max-width: 80vw;
+    }
+
+    #banner-subtitle {
+        font-size: clamp(1.8rem, 8vw, 12rem);
     }
 
     #banner .banner-landscape {
-        height: 110vw;
+        height: 100vh;
+        width: 85vh;
+        margin-top: 15vh;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #banner .banner-landscape img {
         object-position: bottom;
+    }
+
+    #banner .banner-landscape .sky {
+        opacity: 1;
+    }
+
+    #banner .banner-landscape::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--paynesGray);
+        opacity: .2;
     }
 }
 
